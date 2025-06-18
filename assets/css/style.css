@@ -164,10 +164,10 @@
     background: #fff;
     border: 2px solid #333;
     border-radius: 0px;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1.1rem;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    color: #333;
+    font-weight: 200;
     transition: background 0.3s, color 0.3s;
     white-space: nowrap;
   }
@@ -613,7 +613,7 @@
     border: 2px solid #000; /* Borde negro */
     padding: 0.4rem 1rem;
     border-radius: 0;
-    font-weight: 600;
+    font-weight: 200;
     font-size: 0.8rem;
     cursor: pointer;
     text-decoration: none;
@@ -637,7 +637,7 @@
     border: 2px solid #000; /* Borde negro */
     padding: 1.2rem 2.2rem;
     border-radius: 0;
-    font-weight: 600;
+    font-weight: 200;
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;

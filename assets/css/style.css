@@ -162,7 +162,7 @@
     display: flex;
     align-items: center;
     background: #fff;
-    border: 2px solid #333;
+    border: 1.5px solid #333;
     border-radius: 0px;
     padding: 0.25rem 1.1rem;
     text-decoration: none;
@@ -609,8 +609,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: #000; /* Texto negro */
-    border: 2px solid #000; /* Borde negro */
+    color: #333; /* Texto negro */
+    border: 1.5px solid #333; /* Borde negro */
     padding: 0.4rem 1rem;
     border-radius: 0;
     font-weight: 400;
@@ -633,8 +633,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: #000; /* Texto negro */
-    border: 2px solid #000; /* Borde negro */
+    color: #333; /* Texto negro */
+    border: 1.5px solid #333; /* Borde negro */
     padding: 1.2rem 2.2rem;
     border-radius: 0;
     font-weight: 400;
@@ -648,7 +648,7 @@
   }
 
   .btn-explore-black-product:hover {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
   }
   
@@ -924,7 +924,7 @@
     justify-content: center;
     background: transparent;
     color: #333;
-    border: 2px solid #333;
+    border: 1.5px solid #333;
     padding: 0.75rem 2rem;
     border-radius: 0px;
     font-weight: 400;

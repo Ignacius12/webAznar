@@ -16,7 +16,8 @@
   
   /* Tipografía y colores base */
   body {
-    font-family: 'NOTO SANS', serif;
+    /*font-family: 'NOTO SANS', serif;*/
+    font-family: 'MONTSERRAT', serif;
     font-weight: 300;
     color: #222;
     line-height: 1.6;
@@ -536,7 +537,8 @@
     font-weight: 300;
     color: #666;
     margin-bottom: 1.5rem;
-    font-family: 'NOTO SANS', serif;
+    font-family: 'MONTSERRAT', serif;
+    /*font-family: 'NOTO SANS', serif;*/
     font-weight: 400;
   }
 
@@ -880,7 +882,8 @@
     border: 1px solid #ccc;
     border-radius: 0px;
     font-size: 1rem;
-    font-family: 'NOTO SANS', serif;
+    /*font-family: 'NOTO SANS', serif;*/
+    font-family: 'MONTSERRAT', serif;
     font-weight: 300;
     background-color: #fff;
     transition: border-color 0.3s, box-shadow 0.3s;

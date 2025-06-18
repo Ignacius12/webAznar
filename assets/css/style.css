@@ -18,7 +18,7 @@
   body {
     font-family: 'NOTO SANS', serif;
     font-weight: 200;
-    color: #333;
+    color: #222;
     line-height: 1.6;
     background-color: #F9F9F9; /* <-- Cambiado de #fff a #FAFAFA */
     text-align: justify;
@@ -59,7 +59,7 @@
   
   .top-links a {
     text-decoration: none;
-    color: #333;
+    color: #222;
     transition: color 0.3s ease;
   }
   
@@ -94,7 +94,7 @@
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: #333;
+  color: #222;
   font-weight: 200;
   font-size: 0.95rem; /* ⬅️ Letra un pelín más pequeña */
   padding-bottom: 3px; /* ⬅️ Menos padding inferior */
@@ -145,7 +145,7 @@
 .submenu li a {
   display: block;
   padding: 0.5rem 0;
-  color: #333;
+  color: #222;
   text-decoration: none;
   font-size: 0.95rem;
 }
@@ -162,18 +162,18 @@
     display: flex;
     align-items: center;
     background: #fff;
-    border: 1.5px solid #333;
+    border: 1.5px solid #222;
     border-radius: 0px;
     padding: 0.25rem 1.1rem;
     text-decoration: none;
-    color: #333;
+    color: #222;
     font-weight: 400;
     transition: background 0.3s, color 0.3s;
     white-space: nowrap;
   }
   
   .btn-area-privada:hover {
-    background: #333;
+    background: #222;
     color: #fff;
   }
   
@@ -367,7 +367,7 @@
     max-width: 1000px;
     padding: 2rem 2rem;
     margin: 0 auto;
-    color: #333;
+    color: #222;
   }
 
   /**************************************************************/ 
@@ -610,8 +610,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: #333; /* Texto negro */
-    border: 1.5px solid #333; /* Borde negro */
+    color: #222; /* Texto negro */
+    border: 1.5px solid #222; /* Borde negro */
     padding: 0.4rem 1rem;
     border-radius: 0;
     font-weight: 400;
@@ -625,7 +625,7 @@
   }
 
   .btn-explore-black:hover {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
   }
 
@@ -634,8 +634,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: #333; /* Texto negro */
-    border: 1.5px solid #333; /* Borde negro */
+    color: #222; /* Texto negro */
+    border: 1.5px solid #222; /* Borde negro */
     padding: 1.2rem 2.2rem;
     border-radius: 0;
     font-weight: 400;
@@ -649,7 +649,7 @@
   }
 
   .btn-explore-black-product:hover {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
   }
   
@@ -703,7 +703,7 @@
 .aznar-feature-card h3 {
   font-size: 1.6rem;
   margin: 1rem;
-  color: #333;
+  color: #222;
   font-family: 'MONTSERRAT', serif;
   font-weight: 200;
 }
@@ -741,7 +741,7 @@
   .contact-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #222;
   }
   
   .contact-card p {
@@ -803,7 +803,7 @@
   
   .footer-links a {
     text-decoration: none;
-    color: #333;
+    color: #222;
     transition: color 0.3s ease;
   }
   
@@ -924,8 +924,8 @@
     align-items: center;
     justify-content: center;
     background: transparent;
-    color: #333;
-    border: 1.5px solid #333;
+    color: #222;
+    border: 1.5px solid #222;
     padding: 0.75rem 2rem;
     border-radius: 0px;
     font-weight: 400;
@@ -935,7 +935,7 @@
   }
   
   .btn-submit:hover {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
   }
   
@@ -1099,7 +1099,7 @@
 
 .btn-explore:hover {
   background-color: #fff;
-  color: #333;
+  color: #222;
 }
 
 /* Secciones */
@@ -2110,7 +2110,7 @@ nav {
   font-weight: 200;
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 0.03em; /* ✨ Más aire entre letras para elegancia */
-  color: #333;
+  color: #222;
   margin: 0;
   text-align: left;
 }
@@ -2125,8 +2125,8 @@ nav {
   display: block;
   width: 20px;
   height: 20px;
-  border-bottom: 4px solid #333;
-  border-right: 4px solid #333;
+  border-bottom: 4px solid #222;
+  border-right: 4px solid #222;
   transform: rotate(45deg); /* 🔽 Apunta hacia abajo */
   animation: bounce 2s infinite;
 }

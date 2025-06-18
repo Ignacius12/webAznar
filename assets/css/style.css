@@ -361,26 +361,12 @@
   position: relative;
   }
 
-  .company-banner::before,
-  .company-banner::after {
-    content: "";
-    display: block;
-    width: 75%;                /* 💫 Líneas más cortas que el ancho total */
-    height: 1px;
-    background-color: #ccc;
-    margin: 0 auto 2rem auto;  /* Línea centrada con espacio inferior */
-  }
-
-  .company-banner::after {
-    margin: 2rem auto 0 auto;  /* Línea centrada con espacio superior */
-  }
-
   .company-slogan {
     font-size: 1.3rem;
     font-style: italic;
     font-weight: 300;
     max-width: 1000px;
-    padding: 1rem 1rem;
+    padding: 2rem 2rem;
     margin: 0 auto;
     color: #333;
   }

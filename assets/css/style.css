@@ -2087,11 +2087,11 @@ nav {
 }
 
 .container-inicio {
-  width: 95%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start; /* 🔥 Alinea a la izquierda */
-  align-items: center;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem; /* o lo que tú necesites */
+  box-sizing: border-box;
 }
 
 .titulo-banner {
@@ -2101,21 +2101,7 @@ nav {
   letter-spacing: 0.03em; /* ✨ Más aire entre letras para elegancia */
   color: #333;
   margin: 0;
-}
-
-@media (min-width: 1100px) {
-  .container-inicio {
-    width: 95%;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .titulo-banner {
-    margin: 0;
-    text-align: left;
-  }
+  text-align: left;
 }
 
 /* 🧭 Flecha específica del título Sustainability */

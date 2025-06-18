@@ -2104,6 +2104,23 @@ nav {
   margin: 0;
 }
 
+@media (min-width: 1100px) {
+  .container-inicio {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .titulo-banner {
+    margin: 0;
+    text-align: left;
+    font-size: 2.5rem;
+  }
+}
+
 /* 🧭 Flecha específica del título Sustainability */
 .flecha-sustainability {
   margin-left: 2rem; /* 🌟 Separación adaptable al tamaño del texto */

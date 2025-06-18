@@ -17,6 +17,7 @@
   /* Tipografía y colores base */
   body {
     font-family: 'NOTO SANS', serif;
+    font-weight: 200;
     color: #333;
     line-height: 1.6;
     background-color: #F9F9F9; /* <-- Cambiado de #fff a #FAFAFA */
@@ -87,16 +88,22 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem; /* ⬅️ Menos espacio entre los elementos */
+  
 }
 
 .nav-links a {
   position: relative;
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 0.95rem; /* ⬅️ Letra un pelín más pequeña */
   padding-bottom: 3px; /* ⬅️ Menos padding inferior */
   transition: all 0.3s;
+}
+
+.nav-links a,
+.nav-links .submenu a {
+  font-weight: 200;
 }
 
 .nav-links a::after {
@@ -522,24 +529,29 @@
 
   .split-text h2, .split-text h3 {
     font-family: 'MONTSERRAT', serif;
+    font-weight: 200;
     color: #000;
     margin-bottom: 1rem;
   }
 
   .split-text h2 {
     font-size: 2rem;
+    font-weight: 200;
   }
 
   .split-text h3 {
     font-size: 1.5rem;
+    font-weight: 200;
     margin-bottom: 0.5rem;
   }
 
   .split-text p {
     font-size: 1.1rem;
+    font-weight: 200;
     color: #666;
     margin-bottom: 1.5rem;
     font-family: 'NOTO SANS', serif;
+    font-weight: 200;
   }
 
   .split-image img {
@@ -707,6 +719,7 @@
   margin: 1rem;
   color: #333;
   font-family: 'MONTSERRAT', serif;
+  font-weight: 200;
 }
   
   .aznar-feature-card p {
@@ -882,6 +895,7 @@
     border-radius: 0px;
     font-size: 1rem;
     font-family: 'NOTO SANS', serif;
+    font-weight: 200;
     background-color: #fff;
     transition: border-color 0.3s, box-shadow 0.3s;
   }
@@ -1030,6 +1044,7 @@
   flex: 1;
   padding-left: 3rem;
   padding-right: 5rem;
+  font-weight: 200;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1039,12 +1054,15 @@
 
 .producto-info h2 {
   font-family: 'MONTSERRAT', serif;
+  font-weight: 200;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .producto-info p {
   font-size: 1.1rem;
+  font-weight: 200;
+  font-weight: 200;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -1229,6 +1247,7 @@ nav {
   font-size: 1.5rem;
   margin-bottom: 10px;
   font-family: 'MONTSERRAT', serif;
+  font-weight: 200;
 }
 
 .award-text p {
@@ -1360,6 +1379,7 @@ nav {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
 }
 
 .triple-text ul {
@@ -1411,6 +1431,7 @@ nav {
 .square-text h2 {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
   margin-bottom: 0.8rem;
 }
 
@@ -1470,6 +1491,7 @@ nav {
 .one-third-text h2 {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
   margin-bottom: 1rem;
   text-align: left;
 }
@@ -1630,7 +1652,8 @@ nav {
 .triple-text h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
 }
 
 .triple-text ul {
@@ -1712,7 +1735,8 @@ nav {
 
 .square-text h2 {
   font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
   margin-bottom: 0.8rem;
 }
 
@@ -1788,7 +1812,8 @@ nav {
 
 .one-third-text h2 {
   font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
   margin-bottom: 1rem;
   text-align: left;
 }
@@ -1904,7 +1929,8 @@ nav {
 .footer {
   background-color: #f8f8f8;
   padding: 4rem 2rem 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'MONTSERRAT', sans-serif;
+  font-weight: 200;
   color: #222;
   display: flex;
   flex-direction: column;

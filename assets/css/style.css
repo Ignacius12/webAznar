@@ -729,7 +729,6 @@
   .contact-card {
   background-color: #F9F9F9;        /* ✅ Igual que el fondo general */
   border: none;                     /* ✅ Eliminamos el borde */
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -765,7 +764,11 @@
   .contact-card a:hover {
     color: #0056b3;
   }
-  
+  @media (max-width: 768px) {
+  .contact-card {
+    padding: 1.2rem 0.5rem;  /* Menor padding en móviles */
+  }
+  }
   /* Mapa */
   .map-section {
     padding: 5rem 0;
@@ -843,7 +846,7 @@
     max-width: 800px;
     margin: 0 auto;
     background: #FAFAFA;
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
     border-radius: 0px;
     /*box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);*/
     background: #F9F9F9; /* 💫 Igual que el fondo general */
@@ -853,7 +856,7 @@
   .contact-section {
   margin-top: 4rem; /* 💖 Espacio para respirar debajo del header */
   background-color: #F9F9F9; /* 🎨 Igual que el fondo general */
-  padding: 2rem 1rem; /* ✨ Espaciado interior */
+  padding: 2rem 2rem; /* ✨ Espaciado interior */
   }
   
   .contact-info {

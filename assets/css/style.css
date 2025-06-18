@@ -174,7 +174,7 @@
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 8; /* ✅ Mantiene proporción constante */
+  aspect-ratio: 16 / 6; /* ✅ Mantiene proporción constante */
   overflow: hidden;
   display: flex;
   justify-content: center;

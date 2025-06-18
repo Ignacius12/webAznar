@@ -2079,7 +2079,7 @@ nav {
 
 .inicio-banner {
   width: 100vw;
-  height: 20vh; /* 🎯 Ocupa el 40% restante de la pantalla */
+  height: 15vh; /* 🎯 Ocupa el 40% restante de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2090,7 +2090,6 @@ nav {
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 1rem; /* o lo que tú necesites */
   box-sizing: border-box;
 }
 

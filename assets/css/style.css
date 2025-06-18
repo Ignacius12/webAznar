@@ -726,22 +726,25 @@
   }
 
   .contact-card {
-  background-color: #fff;
-  border: 1px solid #B0B0B0;
+  background-color: #F9F9F9;        /* ✅ Igual que el fondo general */
+  border: none;                     /* ✅ Eliminamos el borde */
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: top; /* 🎯 Centra verticalmente */
-  align-items: center;     /* 🎯 Centra horizontalmente */
-  text-align: center;
-  min-height: 250px;       /* ⬆️ Aumentamos un poco la altura */
-  margin-top: 1rem;        /* 💫 Margen superior para que no esté pegado */
+  justify-content: flex-start;
+  align-items: flex-start;          /* ✅ Alineación a la izquierda */
+  text-align: left;                 /* ✅ Texto alineado a la izquierda */
+  min-height: 250px;
+  margin-top: 1rem;
   margin-bottom: 0;
-}
+  padding: 2rem 3rem 2rem 3rem; /* más espacio a izquierda y derecha */
+  border: 1px solid #B0B0B0; /* borde gris clarito y limpio */
+  }
 
   
   .contact-card h3 {
     font-size: 1.8rem;
+    font-weight: 400;
     margin-bottom: 1rem;
     color: #222;
   }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+
+  <!-- Etiqueta SEO mínima (puedes agregar más si lo deseas) -->
+  <meta name="robots" content="noindex">
+
+  <!-- Fallback para usuarios sin JavaScript -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/es/index.html">
+  </noscript>
+
+  <script>
+    // 🌍 Detectar el idioma del navegador del usuario
+    const lang = navigator.language || navigator.userLanguage;
+    const shortLang = lang.substring(0, 2);
+
+    // 🎯 Redireccionar según el idioma detectado
+    switch (shortLang) {
+      case 'en':
+        window.location.href = '/en/index.html';
+        break;
+      case 'fr':
+        window.location.href = '/fr/index.html';
+        break;
+      default:
+        window.location.href = '/es/index.html'; // Español por defecto
+        break;
+    }
+  </script>
+</head>
+<body>
+  <p>Redirigiendo al idioma adecuado...</p>
+</body>
+</html>

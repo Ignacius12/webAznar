@@ -103,7 +103,7 @@
 
 .nav-links a,
 .nav-links .submenu a {
-  font-weight: 200;
+  font-weight: 350;
 }
 
 .nav-links a::after {
@@ -167,7 +167,7 @@
     padding: 0.25rem 1.1rem;
     text-decoration: none;
     color: #333;
-    font-weight: 200;
+    font-weight: 400;
     transition: background 0.3s, color 0.3s;
     white-space: nowrap;
   }
@@ -514,19 +514,19 @@
 
   .split-text h2, .split-text h3 {
     font-family: 'MONTSERRAT', serif;
-    font-weight: 200;
+    font-weight: 400;
     color: #000;
     margin-bottom: 1rem;
   }
 
   .split-text h2 {
     font-size: 2rem;
-    font-weight: 200;
+    font-weight: 400;
   }
 
   .split-text h3 {
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 300;
     margin-bottom: 0.5rem;
   }
 
@@ -536,7 +536,7 @@
     color: #666;
     margin-bottom: 1.5rem;
     font-family: 'NOTO SANS', serif;
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .split-image img {
@@ -613,7 +613,7 @@
     border: 2px solid #000; /* Borde negro */
     padding: 0.4rem 1rem;
     border-radius: 0;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 0.8rem;
     cursor: pointer;
     text-decoration: none;
@@ -637,7 +637,7 @@
     border: 2px solid #000; /* Borde negro */
     padding: 1.2rem 2.2rem;
     border-radius: 0;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
@@ -927,7 +927,7 @@
     border: 2px solid #333;
     padding: 0.75rem 2rem;
     border-radius: 0px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;

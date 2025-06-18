@@ -87,7 +87,7 @@
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem; /* ⬅️ Menos espacio entre los elementos */
+  gap: 2rem; /* ⬅️ Menos espacio entre los elementos */
   
 }
 
@@ -1120,8 +1120,8 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   max-width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 nav {

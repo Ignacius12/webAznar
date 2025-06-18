@@ -1116,6 +1116,9 @@
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 nav {

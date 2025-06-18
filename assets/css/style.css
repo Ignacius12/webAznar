@@ -676,16 +676,15 @@
   }
   
   .aznar-feature-card {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #F9F9F9; /* Fondo igual al de la web */
   border-radius: 0px;
   overflow: hidden;
   padding: 0;
-  text-align: center;
-  border: 1px solid #eaeaea;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  align-items: flex-start;  /* 🆕 Alinea el texto a la izquierda */
+  text-align: left;         /* 🆕 Aplica al texto */
+  }
 
 .aznar-feature-card .feature-img {
   width: 100%;
@@ -704,10 +703,12 @@
 
 .aznar-feature-card h3 {
   font-size: 1.6rem;
-  margin: 1rem;
+  margin: 1rem 0rem;   /* 🆕 Margen interno lateral */
   color: #222;
   font-family: 'MONTSERRAT', serif;
   font-weight: 300;
+  text-align: left;      /* 🆕 Alineado a la izquierda */
+  width: 100%;
 }
   
   .aznar-feature-card p {

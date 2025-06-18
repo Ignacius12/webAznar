@@ -385,6 +385,7 @@
   /* Imagen que ocupa la mitad del ancho */
   .section-split,
   .seccion-dos-imagenes {
+    background-color: #F2F2F2;
     display: flex;
     height: 500px;
     align-items: center;

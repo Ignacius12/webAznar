@@ -1419,12 +1419,11 @@ nav {
 
 .logo-row {
   display: flex;
-  justify-content: center; /* Centro horizontal */
+  justify-content: center;
   align-items: center;
-  gap: 4rem; /* 💫 Espacio uniforme entre logos */
-  flex-wrap: nowrap; /* ❗️ Fuerza una sola línea si caben */
-  margin: 0 auto;
-  max-width: 800px; /* ✅ Opcional: limitar ancho total */
+  gap: 7rem; /* 🎯 más espacio entre logos */
+  flex-wrap: wrap; /* por si se reduce el tamaño de pantalla */
+  padding: 1.5rem 0;  /* algo de espacio vertical extra si hace falta */
 }
 
 .logo-row img {
@@ -1437,8 +1436,8 @@ nav {
   display: flex;
   align-items: stretch;
   width: 100%;
-  height: 500px;
-  margin: 5rem 0;
+  height: 650px;
+  margin: 2rem 0 !important;
   padding: 0 2rem;
   gap: 2rem;
 }
@@ -1465,6 +1464,7 @@ nav {
   align-items: center;
   text-align: center;
 }
+
 
 .triple-text h2 {
   font-size: 1.8rem;
@@ -1497,7 +1497,7 @@ nav {
   display: flex;
   width: 100%;
   gap: 2rem;
-  margin: 5rem 0;
+  margin: 2rem 0;
   padding: 0 2rem;
 }
 
@@ -1515,8 +1515,8 @@ nav {
   background-color: #f0f0f0;
   flex-direction: column;
   padding: 3rem 1.5rem;
-  text-align: center;
-  overflow-y: auto;
+  text-align: left;        /* 👈 cambiado de center a left */
+  align-items: flex-start; /* 👈 añadido */
 }
 
 .square-text h2 {
@@ -1552,8 +1552,7 @@ nav {
   margin: 5rem 0;
   height: 500px;
   align-items: stretch;
-  padding: 0 2rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .two-thirds-img {
@@ -1689,24 +1688,6 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-/* === CONTRACT: Logos === */
-.contract-logos {
-  margin: 4rem 0;
-}
-
-.logo-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.logo-row img {
-  max-width: 120px;
-  height: auto;
 }
 
 /* === CONTRACT: Triple Block === */
@@ -1845,9 +1826,31 @@ nav {
 }
 
 .triple-square .icono-cert {
-  width: 40px;
+  width: 50px;
   height: auto;
   margin-bottom: 1rem;
+}
+
+.triple-text,
+.square-text,
+.one-third-text,
+.producto-info {
+  align-items: flex-start !important; /* Alineación izquierda de elementos internos */
+  text-align: left !important;       /* Alineación del texto */
+  padding-left: 2rem !important;     /* Empuja todo visualmente a la izquierda */
+  padding-right: 2rem !important;    /* Mantiene simetría */
+}
+.square-text h2,
+.triple-text h2,
+.one-third-text h2,
+.producto-info h2 {
+  font-weight: 500 !important; /* 💪 Subido de 300 a 500 */
+}
+.square-text p,
+.triple-text ul li,
+.one-third-text ul li,
+.producto-info p {
+  font-weight: 400 !important; /* 📈 Subido de 300 a 400 */
 }
 
 @media (max-width: 768px) {
@@ -1870,6 +1873,7 @@ nav {
     padding: 2rem 1rem;
   }
 }
+
 
 /* === CONTRACT: 2/3 - 1/3 Bloque (Antibacterial) === */
 .two-thirds-block {
@@ -1922,7 +1926,7 @@ nav {
 }
 
 .one-third-text .icono-cert {
-  width: 40px;
+  width: 50px;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -2015,7 +2019,9 @@ nav {
     height: 100%;
   }
 }
-
+.triple-block { margin: 2rem 0 !important; }        /* usa gap: 2rem */
+.triple-square { margin: 2rem 0 !important; }        /* usa gap: 2rem */
+.two-thirds-block { margin: 2rem 0 !important; }     /* usa gap: 2rem */
 /* ==== FOOTER COMPLETO RESPONSIVO ==== */
 .footer {
   background-color: #f8f8f8;

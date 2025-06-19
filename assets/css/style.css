@@ -104,7 +104,7 @@
 
 .nav-links a,
 .nav-links .submenu a {
-  font-weight: 350;
+  font-weight: 425;
 }
 
 .nav-links a::after {
@@ -1116,20 +1116,16 @@
 /* Galería de imágenes en fila */
 .producto-galeria {
   display: flex;
-  flex-direction: row;       /* 💪 Fuerza disposición en fila */
-  justify-content: center;
-  align-items: stretch;
-  gap: 3.4rem;
-  padding: 4rem 2rem;
-  background-color: #f9f9f9;
-  flex-wrap: nowrap;         /* 🚫 Que no salten de línea (excepto en móvil) */
+  justify-content: space-between;
+  padding: 2rem 5vw;
+  gap: 2rem;
 }
 
 .producto-galeria img {
-  width: 100%;
-  max-width: 55vh;
-  aspect-ratio: 8 / 10;
-  object-fit: cover;
+  width: calc((100% - 4rem - 10vw) / 3); /* 🔍 3 imágenes con gap y padding incluidos */
+  aspect-ratio: 3 / 4;                   /* 📐 Forma uniforme */
+  height: auto;
+  object-fit: cover;                     /* ✂️ Recorta sin deformar */
   display: block;
 }
 

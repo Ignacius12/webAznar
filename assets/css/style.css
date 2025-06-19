@@ -519,21 +519,22 @@
     font-weight: 500;
     color: #000;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .split-text h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
   }
 
   .split-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
   }
 
   .split-text p {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: #666;
     margin-bottom: 1.5rem;

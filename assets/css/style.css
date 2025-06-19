@@ -661,6 +661,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-left: 2.5rem;  /* ❌ Elimina padding del body/container */
+    margin-right: 2.5rem;
   }
   
   @media (max-width: 992px) {

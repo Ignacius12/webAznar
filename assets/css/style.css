@@ -27,6 +27,10 @@
     padding-top: 100px; /* 💡 Para que el contenido no quede oculto debajo del header */
   }
 
+  .bold {
+  font-weight: 450;
+  }
+
   html, body {
   overflow-x: hidden;
   }

@@ -1436,7 +1436,7 @@ nav {
   display: flex;
   align-items: stretch;
   width: 100%;
-  aspect-ratio: 2.4 / 1;
+  height: 75vh;
   margin: 2rem 0 !important;
   padding: 0 2rem;
   gap: 2rem;

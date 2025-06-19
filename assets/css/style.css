@@ -2222,40 +2222,11 @@ nav {
 .titulo-banner {
   font-family: 'MONTSERRAT', serif; /*font-family: 'MONTSERRAT', serif; font-family: 'NOTO SANS', serif;*/
   font-weight: 300;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 2rem);
   letter-spacing: 0.03em; /* ✨ Más aire entre letras para elegancia */
   color: #222;
   margin: 0;
   text-align: left;
-}
-
-/* 🧭 Flecha específica del título Sustainability */
-.flecha-sustainability {
-  margin-left: 2rem; /* 🌟 Separación adaptable al tamaño del texto */
-}
-
-/* Reaprovechamos el estilo base de la flecha */
-.flecha-sustainability span {
-  display: block;
-  width: 20px;
-  height: 20px;
-  border-bottom: 4px solid #222;
-  border-right: 4px solid #222;
-  transform: rotate(45deg); /* 🔽 Apunta hacia abajo */
-  animation: bounce 2s infinite;
-}
-
-/* 🎉 Animación suave */
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) rotate(45deg);
-  }
-  40% {
-    transform: translateY(8px) rotate(45deg);
-  }
-  60% {
-    transform: translateY(4px) rotate(45deg);
-  }
 }
 
 

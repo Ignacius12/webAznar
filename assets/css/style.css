@@ -1127,8 +1127,8 @@
 
 .producto-galeria img {
   width: 100%;
-  max-width: 60vh;
-  aspect-ratio: 7 / 9;
+  max-width: 55vh;
+  aspect-ratio: 8 / 10;
   object-fit: cover;
   display: block;
 }

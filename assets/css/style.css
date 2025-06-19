@@ -1076,7 +1076,7 @@
 }
 
 .producto-imagen {
-  flex: 3;
+  flex: 2;
   height: 550px; /* 🎯 Fijamos altura constante */
   overflow: hidden; /* ✂️ Corta si sobra */
 }

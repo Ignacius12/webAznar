@@ -1127,13 +1127,25 @@
 
 .producto-galeria img {
   width: 100%;
-  max-width: 400px;
+  max-width: 60vh;
   aspect-ratio: 7 / 9;
   object-fit: cover;
   display: block;
 }
+
+@media (max-width: 1200px) and (min-width: 700px) {
+  .producto-galeria img {
+    max-width: 40vh;  /* 📏 Más pequeñas que los 350px originales */
+    height: auto;
+  }
+
+  .producto-galeria {
+    gap: 2rem; /* 🧩 Reduce el espacio entre imágenes si es necesario */
+    padding: 2rem 1rem; /* 🎯 Añade respiración lateral */
+  }
+}
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 700px) {
   .producto-detalle {
     flex-direction: column;
     padding: 2rem 1rem;
@@ -1157,8 +1169,20 @@
     height: auto;
   }
 
+  .producto-galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;       /* 👈 asegúrate de que sea columnar, no colapsado */
+  }
+
   .producto-galeria img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 2rem;     /* 👈 espacio entre fotos */
+    object-fit: cover;
+    display: block;
   }
 }
 

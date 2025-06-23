@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ubicación | Aznar Textil</title>
-  <meta name="description" content="Encuentra la ubicación de Aznar Textil y ponte en contacto con nosotros. Dirección, teléfonos, emails y mapa interactivo.">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canal de Denuncias | Aznar Textil</title>
+  <meta name="description" content="Canal de denuncias de Aznar Textil. Garantizamos confidencialidad y protección del denunciante."/>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -113,39 +108,37 @@
   </div>
 </header>
 
-  <!-- Contact Info -->
-  <section class="contact-info">
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Dirección</h3>
-        <p>Villa de Bilbao 2 POL.IND. Fuente del Jarro 46988 Paterna-Valencia (Spain)</p>
-        <a href="../assets/documents/PlanMovilidadVial2023b.pdf" target="_blank" class="btn-pdf">Ver PDF Plan de Movilidad</a>
+<main>
+  <section class="contact-section">
+    
+    <form class="contact-form" action="./php/denuncias.php" method="POST">
+        <div class="contact-info-vertical">
+          <h2>Canal de Denuncias</h2>
+          <p>Este canal permite comunicar hechos o comportamientos contrarios a la normativa interna o legal de forma confidencial y segura.</p>
+          <br>
+        </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe los hechos de forma clara y detallada"></textarea>
+        </div>
       </div>
-      <div class="contact-card">
-        <h3>Teléfono</h3>
-        <p>International Division</p>
-        <p><a href=""></a>00 34 96 134 37 12</p>    
-        <p>Nacional</p> 
-        <p><a href=""></a>961 343 710</p>
-      </div>
-      <div class="contact-card">
-        <h3>Email</h3>
-        <p><a href="">aznartextil@aznartextil.com</a></p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Mapa -->
-  <section class="map-section">
-    <div class="container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.1437398129286!2d-0.4435280242532431!3d39.52834660446266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f758fc3d01f%3A0xc6320b5cf4d9e4dc!2sC.%20Villa%20de%20Bilbao%2C%202%2C%2046988%20Paterna%2C%20Valencia!5e0!3m2!1ses!2ses!4v1718451025175!5m2!1ses!2ses"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
+      <div class="form-row">
+        <div class="form-group checkbox">
+          <input type="checkbox" name="privacidad" required>
+          <label>He leído y acepto la <a href="legal/politica-privacidad.html" class="open-privacy">Política de Privacidad</a>. *</label>
+        </div>
+      </div>
 
-  <!-- Footer -->
+      <div class="form-row">
+        <button type="submit" class="btn-submit">Enviar denuncia</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+ <!-- Footer -->
 <footer class="footer">
   <div class="footer-brand">
     <!-- Logo -->
@@ -166,6 +159,8 @@
       </a>
     </div>
   </div>
+  </div>
+
   <!-- Mapa del sitio -->
   <div class="footer-links">
     <div class="footer-column">
@@ -220,8 +215,10 @@
     <a href="https://www.bondrap.com/">Web Bondrap</a>
   </div>
 </footer>
-<script src="../assets/js/analytics.js"></script>
+
+<script src="../assets/js/analytics.js"></script>  
 <script src="../assets/js/menu.js"></script>
 <script src="../assets/js/scroll-header.js"></script>
+<script src="../assets/js/modal-privacidad.js"></script>
 </body>
 </html>

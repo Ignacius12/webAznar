@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div id="cookie-banner" class="cookie-banner">
             <p>
                 Utilizamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar las cookies analíticas.
-                <a href="uso-cookies.html" class="cookie-link">Más información</a>
+                <a href="../es/legal/uso-cookies.html" class="cookie-link">Más información</a>
             </p>
             <div class="cookie-buttons">
                 <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>

@@ -2282,6 +2282,21 @@ nav {
   text-align: left;
 }
 
+.btn-pdf {
+  display: inline-block;
+  border: solid 1px #111;
+  background-color: #f1f1f1;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pdf:hover {
+  background-color: #ddd;
+}
+
 
 /*---------------------------------------------------*/
 html {

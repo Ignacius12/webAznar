@@ -613,7 +613,7 @@
   display: flex;
   height: 75vh;
   width: 100vw; /* 🌐 Ocupar todo el ancho de la pantalla */
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   padding: 0;
 }
 
@@ -2239,7 +2239,7 @@ nav {
 .section-inicial {
   width: 100vw;      /* 100% del ancho de la pantalla */
   height: 75vh;       /* 🎯 Altura del 60% del viewport */
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   padding: 0;
   overflow: hidden;  /* Por si acaso, evita scroll inesperado */
 }

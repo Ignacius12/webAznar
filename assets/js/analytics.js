@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         .cookie-link {
-        color: #99c9ff;
+        color: #f1f1f1;
         text-decoration: underline;
         }
 
@@ -64,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         .btn-cookie.aceptar {
-        background-color: #1a73e8;
+        background-color:rgb(26, 232, 88);
         color: white;
         }
 
         .btn-cookie.aceptar:hover {
-        background-color: #0c5ed7;
+        background-color:rgb(12, 215, 66);
         }
 
         .btn-cookie.rechazar {

@@ -1,38 +1,56 @@
 <?php
-// ⚠️ Importante: asegúrate de que tu servidor tenga habilitado mail() o utiliza una librería como PHPMailer para producción segura
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Recolectamos el mensaje del formulario
-    $mensaje = trim($_POST["mensaje"]);
+// 🌈 Carga de PHPMailer
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
 
-    // Validación básica
+// 🔐 Carga de credenciales protegidas
+require 'config.php';
+
+// 🛡️ Asegura que solo se accede por POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(403);
+    exit("Acceso no permitido.");
+}
+
+try {
+    // 🎯 Validación básica del mensaje
+    $mensaje = trim($_POST["mensaje"] ?? '');
     if (empty($mensaje)) {
         http_response_code(400);
-        echo "El mensaje es obligatorio.";
-        exit;
+        exit("El mensaje es obligatorio.");
     }
 
-    // Datos del correo
-    $to = "canaldedenuncias@aznartextil.com";
-    $subject = "Nueva denuncia anónima desde el canal web";
-    $headers = "From: anonimo@aznartextil.com\r\n";
-    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+    // 💌 Configuración del correo
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = SMTP_USER;
+    $mail->Password = SMTP_PASS;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    $mail->CharSet = 'UTF-8';
 
-    // Cuerpo del mensaje
-    $body = "Se ha recibido una denuncia anónima a través del formulario web:\n\n";
-    $body .= $mensaje . "\n";
+    // 📬 Envío desde un correo genérico
+    $mail->setFrom(SMTP_USER, 'Canal de Denuncias');
+    $mail->addAddress("ignacioya2002@gmail.com");
+    $mail->Subject = "Nueva denuncia anónima desde el canal web";
+    $mail->isHTML(false); // Enviamos texto plano
+    $mail->Body = "Se ha recibido una denuncia anónima a través del formulario web:\n\n" . $mensaje;
 
-    // Envío del correo
-    if (mail($to, $subject, $body, $headers)) {
-        // Redirección o confirmación
-        header("Location: ../gracias.html"); // Asegúrate de tener esta página
-        exit;
-    } else {
-        http_response_code(500);
-        echo "No se pudo enviar el mensaje. Inténtelo más tarde.";
-    }
-} else {
-    http_response_code(403);
-    echo "Acceso no permitido.";
+    // 🚀 Envío
+    $mail->send();
+
+    // 🌟 Redirección tras éxito
+    header("Location: ../es/gracias.html");
+    exit;
+
+} catch (Exception $e) {
+    error_log("Error al enviar denuncia: " . $mail->ErrorInfo);
+    http_response_code(500);
+    echo "No se pudo enviar el mensaje. Inténtelo más tarde.";
 }
-?>

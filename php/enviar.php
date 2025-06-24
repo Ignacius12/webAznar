@@ -1,45 +1,68 @@
 <?php
-// 💫 Verificamos que el formulario ha sido enviado por POST
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // 🧼 Recoger y limpiar los datos del formulario
-    $nombre  = htmlspecialchars(trim($_POST['nombre'] ?? ''));
-    $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
-    $asunto  = htmlspecialchars(trim($_POST['asunto'] ?? ''));
-    $mensaje = htmlspecialchars(trim($_POST['mensaje'] ?? ''));
+// 🌈 Carga segura de PHPMailer
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
+// 💌 Cargamos configuración externa
+require 'config.php';
+
+// 🛡️ Evitamos el acceso por métodos distintos de POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(403);
+    exit("⚠️ Acceso no permitido.");
+}
+
+try {
+    // 💖 Creamos y configuramos el objeto PHPMailer
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = SMTP_USER; // protegido
+    $mail->Password = SMTP_PASS; // protegido
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom(SMTP_USER, 'Contacto mediante formulario web');
+
+    // 🎯 Validamos y limpiamos entradas
+    $nombre    = htmlspecialchars(trim($_POST['nombre'] ?? ''));
+    $email     = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
+    $asunto    = htmlspecialchars(trim($_POST['asunto'] ?? ''));
+    $mensaje   = htmlspecialchars(trim($_POST['mensaje'] ?? ''));
     $privacidad = isset($_POST['privacidad']);
 
-    // ⚠️ Validación: todos los campos son obligatorios
-    if (!$nombre || !$email || !$asunto || !$mensaje || !$privacidad) {
-        echo "❌ Todos los campos son obligatorios y debes aceptar la Política de Privacidad.";
-        exit;
+    // ⛔ Verificación básica
+    if (!$nombre || !$email || !$mensaje || !$privacidad) {
+        exit("Por favor, completa todos los campos correctamente y acepta la política de privacidad.");
     }
 
-    // 📨 Configuración del correo
-    $destinatario = "aznartextil@aznartextil.com";
-    $asuntoEmail = "Nuevo mensaje desde el formulario web";
+    // 📫 Datos del destinatario
+    $mail->addAddress("ignacioya2002@gmail.com");
+    $mail->Subject = $asunto ?: 'Formulario sin asunto';
+    $mail->isHTML(true);
+    $mail->Body = "
+        <h1>Datos del usuario</h1>
+        <p><strong>Nombre:</strong> $nombre<br>
+        <strong>Email:</strong> $email<br>
+        <strong>Mensaje:</strong><br>$mensaje</p>
+    ";
 
-    // ✍️ Construcción del cuerpo del mensaje
-    $contenido = "Has recibido un nuevo mensaje desde el formulario web:\n\n";
-    $contenido .= "Nombre: $nombre\n";
-    $contenido .= "Email: $email\n";
-    $contenido .= "Asunto: $asunto\n\n";
-    $contenido .= "Mensaje:\n$mensaje\n";
+    // 🚀 Enviamos el correo
+    $mail->send();
 
-    // 📩 Cabeceras del email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    // 🥳 Redirigimos a página de gracias
+    header("Location: ../es/gracias.html");
+    exit;
 
-    // 🚀 Envío del correo
-    if (mail($destinatario, $asuntoEmail, $contenido, $headers)) {
-        header("Location: ../es/gracias.html");
-        exit;
-    } else {
-        echo "❌ Error al enviar el mensaje. Por favor, inténtalo más tarde.";
-    }
-
-} else {
-    echo "⚠️ Acceso no permitido por este método.";
+} catch (Exception $e) {
+    // 🛠️ No mostramos errores al usuario, solo los registramos
+    error_log("Error al enviar correo: " . $mail->ErrorInfo);
+    echo "Ups, algo salió mal. Inténtalo más tarde 🥺";
 }
 ?>

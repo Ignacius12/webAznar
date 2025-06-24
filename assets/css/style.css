@@ -630,10 +630,11 @@
 .seccion-dos-imagenes-portada .derecha {
   flex: 1; /* 🎯 1/3 del ancho total */
   max-width: 33%;
-  margin-right: 2rem;
-  margin-left: 2rem;
 }
-
+.seccion-dos-imagenes-portada .derecha img {
+  object-fit: contain !important;
+  background-color: white; /* Opcional, para evitar zonas vacías transparentes */
+}
 .seccion-dos-imagenes-portada img {
   width: 100%;
   height: 100%;

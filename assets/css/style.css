@@ -237,13 +237,14 @@
   .titulo-banner {
     text-align: center !important;
     margin: 0 auto !important; /* 🔧 Centrado perfecto */
-    padding: 0 1rem !important; /* 🔧 Padding simétrico */
+    padding: 0 0.5rem !important; /* 🔧 Padding reducido para más espacio */
     max-width: 100% !important;
     width: 100% !important; /* 🔧 Asegura ancho completo */
     box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    font-size: 2rem !important; /* 🔧 Tamaño más grande para móvil */
+    white-space: nowrap !important; /* 🔧 Fuerza una sola línea */
+    overflow: hidden !important; /* 🔧 Oculta texto que se desborde */
+    text-overflow: ellipsis !important; /* 🔧 Puntos suspensivos si se corta */
+    font-size: clamp(1.8rem, 6vw, 3rem) !important; /* 🔧 Tamaño más grande y responsivo */
     display: block !important; /* 🔧 Asegura comportamiento de bloque */
   }
 
@@ -271,6 +272,72 @@
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  /* 🔧 Centrar todos los textos y elementos en móvil */
+  .section-split p,
+  .split-text p,
+  .section p,
+  .aznar-feature-card p,
+  .contact-card p,
+  .contact-info-vertical p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 🔧 Centrar botones en móvil */
+  .section-split a,
+  .split-text a,
+  .btn-explore-black,
+  .btn-explore-black-product,
+  .btn-submit,
+  .btn-pdf,
+  .btn-volver {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* 🔧 Centrar listas en móvil */
+  .section-split ul,
+  .split-text ul,
+  .section ul,
+  .triple-text ul,
+  .square-text ul,
+  .one-third-text ul {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .section-split li,
+  .split-text li,
+  .section li,
+  .triple-text li,
+  .square-text li,
+  .one-third-text li {
+    text-align: center !important;
+  }
+
+  /* 🔧 Centrar elementos de contacto en móvil */
+  .contact-info-vertical {
+    text-align: center !important;
+  }
+
+  .contact-info-vertical h2 {
+    text-align: center !important;
+  }
+
+  /* 🔧 Centrar tarjetas de características en móvil */
+  .aznar-feature-card {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .aznar-feature-card h3 {
+    text-align: center !important;
   }
 }
 
@@ -885,13 +952,16 @@
     .section h2,
     .inicio-banner h1,
     .titulo-banner {
-      font-size: 1.8rem !important; /* 🔧 Aumentado de 1.5rem a 1.8rem */
+      font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important; /* 🔧 Tamaño más grande y responsivo */
       line-height: 1.3 !important;
       margin: 1.5rem auto 1rem auto !important; /* 🔧 Centrado perfecto con márgenes */
-      padding: 0 0.5rem !important; /* 🔧 Padding simétrico */
+      padding: 0 0.3rem !important; /* 🔧 Padding mínimo para máximo espacio */
       text-align: center !important; /* 🔧 Asegura centrado del texto */
       width: 100% !important; /* 🔧 Ancho completo */
       box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
+      white-space: nowrap !important; /* 🔧 Fuerza una sola línea */
+      overflow: hidden !important; /* 🔧 Oculta texto que se desborde */
+      text-overflow: ellipsis !important; /* 🔧 Puntos suspensivos si se corta */
     }
 
     /* 🔧 Ajustar contenedores de texto para pantallas muy pequeñas */
@@ -920,6 +990,38 @@
       line-height: 1.4 !important;
       margin-top: 0.8rem !important;
       margin-bottom: 0.8rem !important;
+    }
+
+    /* 🔧 Asegurar centrado en pantallas muy pequeñas */
+    .section-split p,
+    .split-text p,
+    .section p,
+    .aznar-feature-card p,
+    .contact-card p,
+    .contact-info-vertical p {
+      text-align: center !important;
+    }
+
+    .section-split a,
+    .split-text a,
+    .btn-explore-black,
+    .btn-explore-black-product,
+    .btn-submit,
+    .btn-pdf,
+    .btn-volver {
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      text-align: center !important;
+    }
+
+    .aznar-feature-card {
+      text-align: center !important;
+      align-items: center !important;
+    }
+
+    .aznar-feature-card h3 {
+      text-align: center !important;
     }
   }
   /* Mapa */

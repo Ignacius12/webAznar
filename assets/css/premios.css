@@ -1,0 +1,51 @@
+/* Estilos para la sección de premios */
+.awards-expandible {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.awards-expandible.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid de premios - mantener el diseño original */
+.aznar-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.aznar-feature-card {
+  text-align: center;
+  /* Sin bordes, sin fondo, sin sombras - mantener el diseño original */
+}
+
+.premio-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.aznar-feature-card p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aznar-features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .premio-img {
+    height: 150px;
+  }
+}

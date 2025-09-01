@@ -102,7 +102,7 @@
   text-decoration: none;
   color: #222;
   font-weight: 300;
-  font-size: 0.85rem; /* ⬅️ Letra más pequeña para evitar overlap */
+  font-size: 0.9rem; /* ⬅️ Letra un poco más grande para mejor legibilidad */
   padding-bottom: 3px; /* ⬅️ Menos padding inferior */
   transition: all 0.3s;
   white-space: nowrap; /* ⬅️ Evita que el texto se rompa */
@@ -1524,7 +1524,7 @@ nav {
 /* Para pantallas muy grandes - ajustar tamaño de fuente si es necesario */
 @media (min-width: 1600px) {
   .nav-links a {
-    font-size: 0.8rem; /* ⬅️ Letra aún más pequeña en pantallas muy grandes */
+    font-size: 0.85rem; /* ⬅️ Letra un poco más pequeña en pantallas muy grandes */
   }
   
   .nav-links {
@@ -1551,7 +1551,7 @@ nav {
   }
   
   .nav-links a {
-    font-size: 0.82rem; /* ⬅️ Tamaño intermedio para esta transición */
+    font-size: 0.87rem; /* ⬅️ Tamaño intermedio para esta transición */
   }
   
   .nav-links {

@@ -174,10 +174,11 @@
     background: #F9F9F9;
     border: 1.5px solid #222;
     border-radius: 0px;
-    padding: 0.09rem 0.9rem;
+    padding: 0.5rem 1.2rem; /* ⬅️ Padding aumentado para botón más grande */
     text-decoration: none;
     color: #222;
     font-weight: 400;
+    font-size: 0.85rem; /* ⬅️ Mismo tamaño que los enlaces del menú */
     transition: background 0.3s, color 0.3s;
     white-space: nowrap;
   }

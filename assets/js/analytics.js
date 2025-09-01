@@ -8,13 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Determinar la ruta relativa basada en la ubicación actual
     if (currentPath.includes("/es/")) {
       // Si estamos en una subcarpeta de /es/
-      const depth = currentPath.split("/").length - 3; // -3 porque /es/ cuenta como 2 niveles
-      cookiePath = "../".repeat(depth) + "legal/uso-cookies.html";
-    } else if (currentPath === "/es/" || currentPath === "/es/index.html") {
+      const pathParts = currentPath.split("/");
+      const esIndex = pathParts.indexOf("es");
+      const depth = pathParts.length - esIndex - 2; // -2 porque queremos ir desde la ubicación actual hasta /es/
+      
+      if (depth > 0) {
+        cookiePath = "../".repeat(depth) + "legal/uso-cookies.html";
+      } else {
+        cookiePath = "legal/uso-cookies.html";
+      }
+    } else if (currentPath === "/es/" || currentPath === "/es/index.html" || currentPath === "/es") {
       // Si estamos en la raíz de /es/
       cookiePath = "legal/uso-cookies.html";
     } else {
       // Fallback para otras ubicaciones
+      cookiePath = "es/legal/uso-cookies.html";
+    }
+    
+    // Debug: mostrar la ruta calculada en consola
+    console.log("Ruta actual:", currentPath);
+    console.log("Ruta de cookies calculada:", cookiePath);
+    
+    // Verificar que la ruta sea válida
+    if (!cookiePath || cookiePath.includes("undefined") || cookiePath.includes("null")) {
+      console.error("Ruta de cookies inválida, usando fallback");
       cookiePath = "es/legal/uso-cookies.html";
     }
 
@@ -24,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <div id="cookie-banner" class="cookie-banner">
             <p>
                 Utilizamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar las cookies analíticas.
-                <a href="${cookiePath}" class="cookie-link">Más información</a>
+                <a href="${cookiePath}" class="cookie-link" target="_blank">Más información</a>
+                <br><small>Ruta: ${cookiePath}</small>
             </p>
             <div class="cookie-buttons">
                 <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>

@@ -1,13 +1,30 @@
 // 💖 Mostrar banner solo si no hay elección previa
 document.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("cookies_aceptadas")) {
+    // 🔧 Calcular la ruta correcta al archivo de cookies
+    const currentPath = window.location.pathname;
+    let cookiePath = "";
+    
+    // Determinar la ruta relativa basada en la ubicación actual
+    if (currentPath.includes("/es/")) {
+      // Si estamos en una subcarpeta de /es/
+      const depth = currentPath.split("/").length - 3; // -3 porque /es/ cuenta como 2 niveles
+      cookiePath = "../".repeat(depth) + "legal/uso-cookies.html";
+    } else if (currentPath === "/es/" || currentPath === "/es/index.html") {
+      // Si estamos en la raíz de /es/
+      cookiePath = "legal/uso-cookies.html";
+    } else {
+      // Fallback para otras ubicaciones
+      cookiePath = "es/legal/uso-cookies.html";
+    }
+
     const banner = document.createElement("div");
     banner.id = "cookie-banner";
     banner.innerHTML = `
       <div id="cookie-banner" class="cookie-banner">
             <p>
                 Utilizamos cookies para mejorar tu experiencia. Puedes aceptar o rechazar las cookies analíticas.
-                <a href="../../es/legal/uso-cookies.html" class="cookie-link">Más información</a>
+                <a href="${cookiePath}" class="cookie-link">Más información</a>
             </p>
             <div class="cookie-buttons">
                 <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>

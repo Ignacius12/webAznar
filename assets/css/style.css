@@ -92,8 +92,9 @@
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem; /* ⬅️ Menos espacio entre los elementos */
-  
+  gap: 1.5rem; /* ⬅️ Reducido para evitar saltos de línea */
+  flex-wrap: nowrap; /* ⬅️ Evita que los elementos se envuelvan */
+  white-space: nowrap; /* ⬅️ Mantiene todo en una línea */
 }
 
 .nav-links a {
@@ -101,9 +102,10 @@
   text-decoration: none;
   color: #222;
   font-weight: 300;
-  font-size: 0.95rem; /* ⬅️ Letra un pelín más pequeña */
+  font-size: 0.85rem; /* ⬅️ Letra más pequeña para evitar overlap */
   padding-bottom: 3px; /* ⬅️ Menos padding inferior */
   transition: all 0.3s;
+  white-space: nowrap; /* ⬅️ Evita que el texto se rompa */
 }
 
 .nav-links a,
@@ -137,6 +139,8 @@
   margin: 0;
   padding: 0.5rem 1rem;
   z-index: 1000;
+  white-space: nowrap; /* ⬅️ Evita saltos de línea en submenús */
+  min-width: max-content; /* ⬅️ Asegura que el submenú no se corte */
 }
 
 /* Submenu visible al pasar ratón por la NAV completa */
@@ -152,7 +156,8 @@
   padding: 0.5rem 0;
   color: #222;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* ⬅️ Ligeramente más pequeño que el menú principal */
+  white-space: nowrap; /* ⬅️ Evita saltos de línea */
 }
 
 .submenu li a:hover {
@@ -1483,10 +1488,27 @@
   max-width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  gap: 1rem; /* ⬅️ Espacio mínimo entre logo, nav y botón */
+}
+
+/* ⬅️ Asegurar que el logo no se superponga */
+.logo {
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* ⬅️ Asegurar que el botón de área privada no se superponga */
+.area-privada {
+  flex-shrink: 0;
+  z-index: 10;
 }
 
 nav {
   justify-self: center;
+  min-width: 0; /* ⬅️ Permite que se comprima si es necesario */
+  flex: 1; /* ⬅️ Toma el espacio disponible */
+  display: flex;
+  justify-content: center;
 }
 
 .area-privada {
@@ -1496,6 +1518,62 @@ nav {
 /* Botón Área Privada */
 .btn-area-privada {
   white-space: nowrap;
+}
+
+/* Para pantallas muy grandes - ajustar tamaño de fuente si es necesario */
+@media (min-width: 1600px) {
+  .nav-links a {
+    font-size: 0.8rem; /* ⬅️ Letra aún más pequeña en pantallas muy grandes */
+  }
+  
+  .nav-links {
+    gap: 1.2rem; /* ⬅️ Espacio ligeramente reducido */
+  }
+  
+  /* ⬅️ Asegurar que el contenedor de navegación tenga espacio suficiente */
+  .container.nav {
+    max-width: 1800px; /* ⬅️ Limita el ancho máximo para evitar estiramiento excesivo */
+    margin: 0 auto;
+  }
+}
+
+/* ⬅️ Fix para la transición problemática entre tablet grande y PC pequeño */
+@media (min-width: 1401px) and (max-width: 1599px) {
+  .container.nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.82rem; /* ⬅️ Tamaño intermedio para esta transición */
+  }
+  
+  .nav-links {
+    gap: 1.3rem; /* ⬅️ Espacio intermedio */
+  }
+  
+  nav {
+    justify-self: center;
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo {
+    flex-shrink: 0;
+    z-index: 10;
+  }
+  
+  .area-privada {
+    flex-shrink: 0;
+    z-index: 10;
+  }
 }
 
 /* Para móviles */

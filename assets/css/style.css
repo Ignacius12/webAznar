@@ -226,6 +226,52 @@
   .split-text {
     padding-bottom: 0 !important;
   }
+
+  /* 🔧 Centrar títulos de sección en móvil para evitar que se corten */
+  .section-split h2,
+  .split-text h2,
+  .section-inicial h2,
+  .seccion-dos-imagenes h2,
+  .section h2,
+  .inicio-banner h1,
+  .titulo-banner {
+    text-align: center !important;
+    margin: 0 auto !important; /* 🔧 Centrado perfecto */
+    padding: 0 1rem !important; /* 🔧 Padding simétrico */
+    max-width: 100% !important;
+    width: 100% !important; /* 🔧 Asegura ancho completo */
+    box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: 2rem !important; /* 🔧 Tamaño más grande para móvil */
+    display: block !important; /* 🔧 Asegura comportamiento de bloque */
+  }
+
+  /* 🔧 Asegurar que los contenedores de texto tengan suficiente espacio */
+  .split-text {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    text-align: center !important;
+  }
+
+  /* 🔧 Asegurar que las secciones tengan suficiente espacio en móvil */
+  .section-split,
+  .section-inicial,
+  .seccion-dos-imagenes,
+  .section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* 🔧 Centrar también los subtítulos h3 en móvil */
+  .section-split h3,
+  .split-text h3 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 .hero-team {
@@ -827,6 +873,54 @@
   .contact-card {
     padding: 1.2rem 0.5rem;  /* Menor padding en móviles */
   }
+  }
+
+  /* 🔧 Reglas adicionales para pantallas móviles más pequeñas */
+  @media (max-width: 480px) {
+    /* 🔧 Centrar y ajustar títulos de sección en pantallas muy pequeñas */
+    .section-split h2,
+    .split-text h2,
+    .section-inicial h2,
+    .seccion-dos-imagenes h2,
+    .section h2,
+    .inicio-banner h1,
+    .titulo-banner {
+      font-size: 1.8rem !important; /* 🔧 Aumentado de 1.5rem a 1.8rem */
+      line-height: 1.3 !important;
+      margin: 1.5rem auto 1rem auto !important; /* 🔧 Centrado perfecto con márgenes */
+      padding: 0 0.5rem !important; /* 🔧 Padding simétrico */
+      text-align: center !important; /* 🔧 Asegura centrado del texto */
+      width: 100% !important; /* 🔧 Ancho completo */
+      box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
+    }
+
+    /* 🔧 Ajustar contenedores de texto para pantallas muy pequeñas */
+    .split-text {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    /* 🔧 Ajustar espaciado de secciones en pantallas muy pequeñas */
+    .section-split,
+    .section-inicial,
+    .seccion-dos-imagenes,
+    .section {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+      margin-top: 0.8rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+
+    /* 🔧 Centrar subtítulos h3 en pantallas muy pequeñas */
+    .section-split h3,
+    .split-text h3 {
+      font-size: 1.1rem !important;
+      line-height: 1.4 !important;
+      margin-top: 0.8rem !important;
+      margin-bottom: 0.8rem !important;
+    }
   }
   /* Mapa */
   .map-section {

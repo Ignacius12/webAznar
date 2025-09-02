@@ -15,26 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Función para mostrar el banner de cookies
 function mostrarBannerCookies() {
-  const config = getCookieConfig();
-  
   // Crear el banner
   const banner = document.createElement("div");
   banner.id = "cookie-banner";
   banner.className = "cookie-banner";
   
-  // Usar configuración personalizada o valores por defecto
-  const bannerText = config.bannerText || "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de cookies.";
-  const policyUrl = config.policyUrl || "/es/legal/uso-cookies.html";
-  const linkText = config.linkText || "política de cookies";
-  const linkTarget = config.linkTarget || "_blank";
-  const acceptText = config.acceptButtonText || "Aceptar";
-  const rejectText = config.rejectButtonText || "Rechazar";
-  
   banner.innerHTML = `
-    <p>${bannerText.replace('política de cookies', `<a href="${policyUrl}" class="cookie-link" target="${linkTarget}">${linkText}</a>`)}</p>
+    <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="/es/legal/uso-cookies.html" class="cookie-link" target="_blank">política de cookies</a>.</p>
     <div class="cookie-buttons">
-      <button id="aceptar-cookies" class="btn-cookie aceptar">${acceptText}</button>
-      <button id="rechazar-cookies" class="btn-cookie rechazar">${rejectText}</button>
+      <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>
+      <button id="rechazar-cookies" class="btn-cookie rechazar">Rechazar</button>
     </div>
   `;
   
@@ -64,15 +54,8 @@ function cargarAnalytics() {
     return; // No cargar si no se aceptaron
   }
   
-  const config = getCookieConfig();
-  
-  // Verificar si analytics está habilitado
-  if (!config.analytics || !config.analytics.enabled) {
-    return;
-  }
-  
-  // ID de Google Analytics desde la configuración o valor por defecto
-  const GA_MEASUREMENT_ID = config.analytics.measurementId || 'G-XXXXXXXXXX';
+  // ID de Google Analytics (reemplazar con el real)
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
   
   // Cargar gtag
   const script = document.createElement("script");
@@ -91,8 +74,8 @@ function cargarAnalytics() {
     gtag('config', GA_MEASUREMENT_ID, {
       page_title: document.title,
       page_location: window.location.href,
-      anonymize_ip: config.analytics.anonymizeIp !== false, // Protección de privacidad
-      cookie_flags: config.analytics.secureCookies ? 'SameSite=None;Secure' : undefined // Cookies seguras
+      anonymize_ip: true, // Protección de privacidad
+      cookie_flags: 'SameSite=None;Secure' // Cookies seguras
     });
     
     // Eventos de página

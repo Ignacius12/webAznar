@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Banner de Cookies</title>
+  <title>Test Banner de Cookies - Simple</title>
   <link rel="stylesheet" href="assets/css/cookie-banner.css">
   <style>
     body {
@@ -31,16 +31,28 @@
     .test-button:hover {
       background: #0056b3;
     }
+    .status {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #007bff;
+    }
   </style>
 </head>
 <body>
   <div class="test-content">
-    <h1>Test del Banner de Cookies</h1>
+    <h1>Test del Banner de Cookies - Versión Simple</h1>
     <p>Esta página es para probar que el banner de cookies funcione correctamente.</p>
+    
+    <div class="status">
+      <h3>Estado actual:</h3>
+      <div id="cookie-status">Cargando...</div>
+    </div>
     
     <h2>Funcionalidades a probar:</h2>
     <ul>
-      <li>El banner debe aparecer al cargar la página</li>
+      <li>El banner debe aparecer al cargar la página (si no hay decisión previa)</li>
       <li>El enlace a la política de cookies debe funcionar</li>
       <li>Al aceptar, debe desaparecer y cargar analytics</li>
       <li>Al rechazar, debe desaparecer sin cargar analytics</li>
@@ -50,11 +62,14 @@
     <button class="test-button" onclick="cambiarPreferenciasCookies()">Mostrar Banner Nuevamente</button>
     <button class="test-button" onclick="verEstadoCookies()">Ver Estado de Cookies</button>
     <button class="test-button" onclick="limpiarCookies()">Limpiar Cookies</button>
+    <button class="test-button" onclick="recargarPagina()">Recargar Página</button>
     
-    <div id="cookie-status"></div>
+    <div class="status">
+      <h3>Debug:</h3>
+      <div id="debug-info"></div>
+    </div>
   </div>
 
-  <script src="assets/js/cookie-config.js"></script>
   <script src="assets/js/analytics.js"></script>
   <script>
     // Función para mostrar el estado de las cookies
@@ -77,8 +92,28 @@
       localStorage.removeItem("cookies_decision");
       localStorage.removeItem("cookies_timestamp");
       document.getElementById('cookie-status').innerHTML = '<p>Cookies limpiadas</p>';
-      location.reload(); // Recargar para mostrar el banner
+      document.getElementById('debug-info').innerHTML = '<p>Cookies eliminadas del localStorage</p>';
     }
+    
+    // Función para recargar la página
+    function recargarPagina() {
+      location.reload();
+    }
+    
+    // Mostrar estado inicial
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        verEstadoCookies();
+        
+        // Mostrar información de debug
+        const debugDiv = document.getElementById('debug-info');
+        debugDiv.innerHTML = `
+          <p><strong>localStorage cookies_decision:</strong> ${localStorage.getItem("cookies_decision") || 'null'}</p>
+          <p><strong>localStorage cookies_timestamp:</strong> ${localStorage.getItem("cookies_timestamp") || 'null'}</p>
+          <p><strong>Banner presente:</strong> ${document.getElementById("cookie-banner") ? 'SÍ' : 'NO'}</p>
+        `;
+      }, 100);
+    });
   </script>
 </body>
 </html>

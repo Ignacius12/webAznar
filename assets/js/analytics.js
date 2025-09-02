@@ -20,37 +20,17 @@ function mostrarBannerCookies() {
   banner.id = "cookie-banner";
   banner.className = "cookie-banner";
   
-  // Generar la ruta correcta a la política de cookies según la ubicación actual
+  // Generar la ruta correcta a la política de cookies
+  // Usar ruta absoluta desde la raíz del sitio para evitar problemas de navegación
   const currentPath = window.location.pathname;
   let policyUrl;
   
-  // Calcular la ruta relativa correcta desde la página actual
   if (currentPath.includes('/webAznar/')) {
-    // Si estamos en GitHub Pages
-    if (currentPath.includes('/es/legal/')) {
-      // Si estamos en una página legal, ir a la misma carpeta
-      policyUrl = 'uso-cookies.html';
-    } else if (currentPath.includes('/es/producto/')) {
-      // Si estamos en productos, subir dos niveles
-      policyUrl = '../../legal/uso-cookies.html';
-    } else if (currentPath.includes('/es/')) {
-      // Si estamos en es/, subir un nivel
-      policyUrl = 'legal/uso-cookies.html';
-    } else {
-      // Si estamos en la raíz de GitHub Pages
-      policyUrl = 'es/legal/uso-cookies.html';
-    }
+    // Si estamos en GitHub Pages, usar ruta absoluta desde la raíz del repositorio
+    policyUrl = '/webAznar/es/legal/uso-cookies.html';
   } else {
     // Para desarrollo local o producción
-    if (currentPath.includes('/es/legal/')) {
-      policyUrl = 'uso-cookies.html';
-    } else if (currentPath.includes('/es/producto/')) {
-      policyUrl = '../../legal/uso-cookies.html';
-    } else if (currentPath.includes('/es/')) {
-      policyUrl = 'legal/uso-cookies.html';
-    } else {
-      policyUrl = 'es/legal/uso-cookies.html';
-    }
+    policyUrl = '/es/legal/uso-cookies.html';
   }
   
   banner.innerHTML = `

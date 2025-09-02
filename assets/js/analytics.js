@@ -24,14 +24,13 @@ function mostrarBannerCookies() {
   const currentPath = window.location.pathname;
   let policyUrl;
   
-  // La ruta correcta siempre debe incluir /es/legal/uso-cookies.html
-  // Usar ruta absoluta desde la raíz del sitio para evitar problemas de navegación
+  // Detectar si estamos en GitHub Pages y generar la ruta correcta
   if (currentPath.includes('/webAznar/')) {
-    // Si estamos en GitHub Pages
-    policyUrl = '/webAznar/es/legal/uso-cookies.html';
+    // Si estamos en GitHub Pages, usar ruta relativa desde la raíz del repositorio
+    policyUrl = 'es/legal/uso-cookies.html';
   } else {
     // Para desarrollo local o producción
-    policyUrl = '/es/legal/uso-cookies.html';
+    policyUrl = 'es/legal/uso-cookies.html';
   }
   
   banner.innerHTML = `

@@ -131,7 +131,8 @@
   
   /* Submenu oculto por defecto */
 .nav-links .submenu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   background: #F9F9F9;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -141,12 +142,17 @@
   z-index: 1000;
   white-space: nowrap; /* ⬅️ Evita saltos de línea en submenús */
   min-width: max-content; /* ⬅️ Asegura que el submenú no se corte */
+  transform: translateY(-10px);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Submenu visible al pasar ratón por la NAV completa */
 @media (min-width: 769px) {
   .nav-links li:hover .submenu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0.05s;
   }
 }
 
@@ -1654,7 +1660,8 @@ nav {
 
   /* Nav oculto inicialmente */
   nav {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 70px;
     right: 0;
@@ -1663,10 +1670,15 @@ nav {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     padding: 2rem 1rem;
     z-index: 1000;
+    transform: translateX(100%);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   nav.open {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition-delay: 0.05s;
   }
 
   .nav-links {
@@ -1677,11 +1689,20 @@ nav {
 
   /* Submenu en móvil */
   .nav-links .submenu {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-links .has-submenu.open > .submenu {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    max-height: 200px;
+    transform: translateY(0);
+    transition-delay: 0.05s;
   }
 
   /* Mostrar icono hamburguesa en móvil */
@@ -1693,6 +1714,11 @@ nav {
   .menu-toggle img {
     width: 24px;
     height: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .menu-toggle.active img {
+    transform: rotate(90deg);
   }
 }
 

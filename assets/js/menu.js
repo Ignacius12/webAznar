@@ -7,6 +7,7 @@ const submenuParents = document.querySelectorAll('.has-submenu');
 menuIcon.addEventListener('click', (e) => {
   e.stopPropagation();
   nav.classList.toggle('open');
+  menuIcon.classList.toggle('active');
 });
 
 // Manejar submenús en móvil por click
@@ -38,6 +39,7 @@ submenuParents.forEach(parent => {
 document.addEventListener('click', () => {
   if (window.innerWidth <= 768) {
     nav.classList.remove('open');
+    menuIcon.classList.remove('active');
     submenuParents.forEach(item => item.classList.remove('open'));
   }
 });

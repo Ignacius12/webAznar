@@ -20,8 +20,27 @@ function mostrarBannerCookies() {
   banner.id = "cookie-banner";
   banner.className = "cookie-banner";
   
+  // Generar la ruta correcta a la política de cookies según la ubicación actual
+  const currentPath = window.location.pathname;
+  let policyUrl;
+  
+  if (currentPath.includes('/producto/')) {
+    // Desde páginas de productos (2 niveles arriba)
+    policyUrl = '../../legal/uso-cookies.html';
+  } else if (currentPath.includes('/quienes-somos/') || currentPath.includes('/por-que-aznar/') || 
+             currentPath.includes('/responsabilidad-corporativa/') || currentPath.includes('/contract/')) {
+    // Desde páginas de empresa (2 niveles arriba)
+    policyUrl = '../../legal/uso-cookies.html';
+  } else if (currentPath.includes('/legal/')) {
+    // Desde páginas legales (mismo nivel)
+    policyUrl = 'uso-cookies.html';
+  } else {
+    // Desde la página principal y otras (1 nivel arriba)
+    policyUrl = '../legal/uso-cookies.html';
+  }
+  
   banner.innerHTML = `
-    <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="/es/legal/uso-cookies.html" class="cookie-link" target="_blank">política de cookies</a>.</p>
+    <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="${policyUrl}" class="cookie-link" target="_blank">política de cookies</a>.</p>
     <div class="cookie-buttons">
       <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>
       <button id="rechazar-cookies" class="btn-cookie rechazar">Rechazar</button>

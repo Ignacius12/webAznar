@@ -90,7 +90,7 @@
   
   .cookie-banner p {
     text-align: center;
-    white-space: nowrap;
+    white-space: normal;
   }
   
   .cookie-buttons {

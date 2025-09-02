@@ -131,11 +131,37 @@
       </p>
       
       <div class="error-actions">
-        <a href="es/index.html" class="btn-error btn-primary">Volver al Inicio</a>
-        <a href="es/producto/producto.html" class="btn-error btn-secondary">Ver Productos</a>
-        <a href="es/contacto.html" class="btn-error btn-secondary">Contacto</a>
+        <a href="es/index.html" class="btn-error btn-primary" id="btn-inicio">Volver al Inicio</a>
+        <a href="es/producto/producto.html" class="btn-error btn-secondary" id="btn-productos">Ver Productos</a>
+        <a href="es/contacto.html" class="btn-error btn-secondary" id="btn-contacto">Contacto</a>
       </div>
     </div>
   </div>
+  
+  <script>
+    // Corregir rutas automáticamente según la ubicación
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPath = window.location.pathname;
+      let basePath = '';
+      
+      // Detectar si estamos en GitHub Pages
+      if (currentPath.includes('/webAznar/')) {
+        basePath = '/webAznar/';
+      }
+      
+      // Corregir enlaces
+      const btnInicio = document.getElementById('btn-inicio');
+      const btnProductos = document.getElementById('btn-productos');
+      const btnContacto = document.getElementById('btn-contacto');
+      
+      if (btnInicio) btnInicio.href = basePath + 'es/index.html';
+      if (btnProductos) btnProductos.href = basePath + 'es/producto/producto.html';
+      if (btnContacto) btnContacto.href = basePath + 'es/contacto.html';
+      
+      // También corregir la ruta del logo
+      const logo = document.querySelector('.error-logo img');
+      if (logo) logo.src = basePath + 'assets/images/7-marca-aznar-textil.png';
+    });
+  </script>
 </body>
 </html>

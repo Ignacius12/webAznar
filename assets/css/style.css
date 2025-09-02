@@ -357,7 +357,6 @@
 
   .aznar-feature-card h3 {
     text-align: center !important;
-    text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -803,23 +802,23 @@
     /* Botón Explore */
     /* Estilo GENERAL botón negro */
   .btn-explore-black {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: #222; /* Texto negro */
-    border: 1.5px solid #222; /* Borde negro */
-    padding: 0.4rem 1rem;
-    border-radius: 0;
-    font-weight: 500;
-    font-size: 0.8rem;
-    cursor: pointer;
-    text-decoration: none;
-    margin-top: 2rem; /* más pegado al título */
-    margin-bottom: 4rem; /* más margen por abajo */
-    transition: all 0.3s ease;
-    max-width: 200px;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #111; /* 🔧 Texto más oscuro */
+  border: 1.5px solid #111; /* 🔧 Borde más oscuro */
+  padding: 0.4rem 1rem;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 2rem; /* más pegado al título */
+  margin-bottom: 4rem; /* más margen por abajo */
+  transition: all 0.3s ease;
+  max-width: 200px;
+}
 
   .btn-explore-black:hover {
     background-color: #222;
@@ -906,7 +905,6 @@
   font-weight: 300;
   text-align: left;      /* 🆕 Alineado a la izquierda */
   width: 100%;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 /* Excepción para la página "Por qué Aznar" - títulos debajo de fotos en minúscula */
@@ -956,7 +954,6 @@
     font-weight: 400;
     margin-bottom: 0.5rem;
     color: #222;
-    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
   
   .contact-card p {
@@ -1004,7 +1001,6 @@
       box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
       font-weight: 450 !important; /* 🔧 Mismo peso que h3 */
       color: #000 !important; /* 🔧 Mismo color que h3 */
-      text-transform: uppercase !important; /* 🔧 Mantiene mayúsculas */
     }
 
     /* 🔧 Ajustar contenedores de texto para pantallas muy pequeñas */
@@ -1033,7 +1029,6 @@
       line-height: 1.4 !important;
       margin-top: 0.8rem !important;
       margin-bottom: 0.8rem !important;
-      text-transform: uppercase !important; /* 🔧 Transforma todos los subtítulos a mayúsculas */
     }
 
     /* 🔧 Asegurar centrado en pantallas muy pequeñas */
@@ -1066,7 +1061,6 @@
 
     .aznar-feature-card h3 {
       text-align: center !important;
-      text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
     }
 
     /* Excepción para la página "Por qué Aznar" - títulos debajo de fotos en minúscula */
@@ -1414,7 +1408,6 @@
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .producto-info p {
@@ -1493,7 +1486,6 @@
   .producto-info h2 {
     margin-bottom: 0.4rem;
     margin-top: 0.4rem;
-    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 
   .producto-imagen{
@@ -1861,7 +1853,6 @@ nav {
   margin-bottom: 0.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .triple-text ul {
@@ -1920,7 +1911,6 @@ nav {
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
   margin-bottom: 0.5rem;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .square-text p {
@@ -1987,7 +1977,6 @@ nav {
   font-weight: 300;
   margin-bottom: 0.5rem;
   text-align: left;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .one-third-text ul {
@@ -2067,7 +2056,6 @@ nav {
 
   .one-third-text h2 {
     text-align: center;
-    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -2137,7 +2125,6 @@ nav {
   margin-bottom: 0.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .triple-text ul {
@@ -2227,7 +2214,6 @@ nav {
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
   margin-bottom: 0.5rem;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .square-text p {
@@ -2269,7 +2255,6 @@ nav {
 .one-third-text h2,
 .producto-info h2 {
   font-weight: 500 !important; /* 💪 Subido de 300 a 500 */
-  text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
 }
 .square-text p,
 .triple-text ul li,
@@ -2336,7 +2321,6 @@ nav {
   font-weight: 300;
   margin-bottom: 0.5rem;
   text-align: left;
-  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .one-third-text ul {
@@ -2380,7 +2364,6 @@ nav {
 
   .one-third-text h2 {
     text-align: center;
-    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -2661,7 +2644,6 @@ nav {
   color: #000;
   margin: 0;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .btn-pdf {

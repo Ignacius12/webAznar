@@ -1,178 +1,116 @@
-// 💖 Mostrar banner solo si no hay elección previa
+// Sistema de Cookies y Analytics
 document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem("cookies_aceptadas")) {
-    const style = document.createElement("style");
-    style.innerHTML = `
-      .cookie-banner {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        background: rgba(20, 20, 20, 0.85);
-        backdrop-filter: blur(10px);
-        color: #fff;
-        padding: 20px 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        font-size: 16px;
-        line-height: 1.5;
-      }
-
-      .cookie-banner p {
-        margin: 0;
-      }
-
-      .cookie-link {
-        color: #f1f1f1;
-        text-decoration: underline;
-      }
-
-      .cookie-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .btn-cookie {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .btn-cookie.aceptar {
-        background-color: rgb(26, 232, 88);
-        color: white;
-      }
-
-      .btn-cookie.aceptar:hover {
-        background-color: rgb(12, 215, 66);
-      }
-
-      .btn-cookie.rechazar {
-        background-color: #444;
-        color: white;
-      }
-
-      .btn-cookie.rechazar:hover {
-        background-color: #666;
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Crear el banner de cookies
-    const banner = document.createElement("div");
-    banner.id = "cookie-banner";
-    banner.innerHTML = `
-      <p>Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra <a href="/es/legal/uso-cookies.html" class="cookie-link">política de cookies</a>.</p>
-      <div class="cookie-buttons">
-        <button id="aceptar-cookies" class="btn-cookie aceptar">Aceptar</button>
-        <button id="rechazar-cookies" class="btn-cookie rechazar">Rechazar</button>
-      </div>
-    `;
-    document.body.appendChild(banner);
-
-    // Eventos de los botones
-    document.getElementById("aceptar-cookies").onclick = () => {
-      localStorage.setItem("cookies_aceptadas", "true");
-      document.getElementById("cookie-banner").remove();
-      cargarAnalytics(); // ✅ Solo si acepta, lo cargamos
-    };
-
-    document.getElementById("rechazar-cookies").onclick = () => {
-      localStorage.setItem("cookies_aceptadas", "false");
-      document.getElementById("cookie-banner").remove();
-    };
-  } else if (localStorage.getItem("cookies_aceptadas") === "true") {
-    // Ya aceptó anteriormente
+  // Verificar si ya se tomó una decisión sobre las cookies
+  const cookiesDecision = localStorage.getItem("cookies_decision");
+  
+  if (!cookiesDecision) {
+    // Mostrar banner de cookies
+    mostrarBannerCookies();
+  } else if (cookiesDecision === "aceptadas") {
+    // Si ya se aceptaron, cargar analytics
     cargarAnalytics();
   }
+  // Si se rechazaron, no hacer nada
 });
 
-// 🧠 Cargar Google Analytics solo si se acepta
-function cargarAnalytics() {
-  // Reemplaza GA_MEASUREMENT_ID con tu ID real de Google Analytics
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+// Función para mostrar el banner de cookies
+function mostrarBannerCookies() {
+  const config = getCookieConfig();
   
+  // Crear el banner
+  const banner = document.createElement("div");
+  banner.id = "cookie-banner";
+  banner.className = "cookie-banner";
+  
+  // Usar configuración personalizada o valores por defecto
+  const bannerText = config.bannerText || "Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestra política de cookies.";
+  const policyUrl = config.policyUrl || "/es/legal/uso-cookies.html";
+  const linkText = config.linkText || "política de cookies";
+  const linkTarget = config.linkTarget || "_blank";
+  const acceptText = config.acceptButtonText || "Aceptar";
+  const rejectText = config.rejectButtonText || "Rechazar";
+  
+  banner.innerHTML = `
+    <p>${bannerText.replace('política de cookies', `<a href="${policyUrl}" class="cookie-link" target="${linkTarget}">${linkText}</a>`)}</p>
+    <div class="cookie-buttons">
+      <button id="aceptar-cookies" class="btn-cookie aceptar">${acceptText}</button>
+      <button id="rechazar-cookies" class="btn-cookie rechazar">${rejectText}</button>
+    </div>
+  `;
+  
+  // Agregar el banner al body
+  document.body.appendChild(banner);
+  
+  // Eventos de los botones
+  document.getElementById("aceptar-cookies").addEventListener("click", () => {
+    localStorage.setItem("cookies_decision", "aceptadas");
+    localStorage.setItem("cookies_timestamp", Date.now().toString());
+    document.getElementById("cookie-banner").remove();
+    cargarAnalytics(); // Solo cargar analytics si se aceptan
+  });
+  
+  document.getElementById("rechazar-cookies").addEventListener("click", () => {
+    localStorage.setItem("cookies_decision", "rechazadas");
+    localStorage.setItem("cookies_timestamp", Date.now().toString());
+    document.getElementById("cookie-banner").remove();
+    // No cargar analytics si se rechazan
+  });
+}
+
+// Función para cargar Google Analytics solo si se aceptan las cookies
+function cargarAnalytics() {
+  // Verificar que realmente se aceptaron las cookies
+  if (localStorage.getItem("cookies_decision") !== "aceptadas") {
+    return; // No cargar si no se aceptaron
+  }
+  
+  const config = getCookieConfig();
+  
+  // Verificar si analytics está habilitado
+  if (!config.analytics || !config.analytics.enabled) {
+    return;
+  }
+  
+  // ID de Google Analytics desde la configuración o valor por defecto
+  const GA_MEASUREMENT_ID = config.analytics.measurementId || 'G-XXXXXXXXXX';
+  
+  // Cargar gtag
   const script = document.createElement("script");
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   script.async = true;
   document.head.appendChild(script);
-
-  script.onload = function () {
+  
+  script.onload = function() {
+    // Configurar gtag
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
-    gtag("js", new Date());
-    gtag("config", GA_MEASUREMENT_ID, {
+    
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, {
       page_title: document.title,
       page_location: window.location.href,
-      custom_map: {
-        'custom_parameter_1': 'page_category',
-        'custom_parameter_2': 'user_type'
-      }
+      anonymize_ip: config.analytics.anonymizeIp !== false, // Protección de privacidad
+      cookie_flags: config.analytics.secureCookies ? 'SameSite=None;Secure' : undefined // Cookies seguras
     });
-
-    // Eventos personalizados para SEO
+    
+    // Eventos de página
     gtag('event', 'page_view', {
       page_title: document.title,
       page_location: window.location.href,
       page_category: getPageCategory()
     });
-
-    // Eventos de interacción del usuario
-    document.addEventListener('click', function(e) {
-      if (e.target.tagName === 'A') {
-        gtag('event', 'click', {
-          link_url: e.target.href,
-          link_text: e.target.textContent,
-          page_title: document.title
-        });
-      }
-    });
-
-    // Eventos de scroll para engagement
-    let scrollDepth = 0;
-    window.addEventListener('scroll', function() {
-      const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-      if (scrollPercent > scrollDepth && scrollPercent % 25 === 0) {
-        scrollDepth = scrollPercent;
-        gtag('event', 'scroll', {
-          scroll_depth: scrollPercent,
-          page_title: document.title
-        });
-      }
-    });
-
-    // Eventos de tiempo en página
-    let startTime = Date.now();
-    window.addEventListener('beforeunload', function() {
-      const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-      gtag('event', 'timing_complete', {
-        name: 'page_view',
-        value: timeOnPage,
-        page_title: document.title
-      });
-    });
-
-    // Eventos de formulario
-    trackFormSubmissions();
     
-    // Eventos de video
-    trackVideoInteractions();
+    // Eventos de interacción
+    setupEventTracking(gtag);
   };
 }
 
 // Función para determinar la categoría de la página
 function getPageCategory() {
   const path = window.location.pathname;
+  
   if (path.includes('/producto/')) return 'producto';
   if (path.includes('/contract/')) return 'contract';
   if (path.includes('/quienes-somos/')) return 'empresa';
@@ -180,35 +118,91 @@ function getPageCategory() {
   if (path.includes('/sostenibilidad/')) return 'sostenibilidad';
   if (path.includes('/contacto')) return 'contacto';
   if (path === '/es/' || path === '/es') return 'inicio';
+  
   return 'otras';
 }
 
-// Eventos de formulario
-function trackFormSubmissions() {
+// Configurar tracking de eventos
+function setupEventTracking(gtag) {
+  // Eventos de clic en enlaces
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      gtag('event', 'click', {
+        link_url: e.target.href,
+        link_text: e.target.textContent,
+        page_title: document.title
+      });
+    }
+  });
+  
+  // Eventos de formulario
   const forms = document.querySelectorAll('form');
   forms.forEach(form => {
     form.addEventListener('submit', function() {
-      if (window.gtag) {
-        gtag('event', 'form_submit', {
-          form_name: form.getAttribute('name') || 'contact_form',
-          page_title: document.title
-        });
-      }
+      gtag('event', 'form_submit', {
+        form_name: form.getAttribute('name') || 'contact_form',
+        page_title: document.title
+      });
+    });
+  });
+  
+  // Eventos de video
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.addEventListener('play', function() {
+      gtag('event', 'video_play', {
+        video_title: document.title,
+        page_title: document.title
+      });
+    });
+  });
+  
+  // Eventos de scroll
+  let scrollDepth = 0;
+  window.addEventListener('scroll', function() {
+    const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    if (scrollPercent > scrollDepth && scrollPercent % 25 === 0) {
+      scrollDepth = scrollPercent;
+      gtag('event', 'scroll', {
+        scroll_depth: scrollPercent,
+        page_title: document.title
+      });
+    }
+  });
+  
+  // Tiempo en página
+  let startTime = Date.now();
+  window.addEventListener('beforeunload', function() {
+    const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+    gtag('event', 'timing_complete', {
+      name: 'page_view',
+      value: timeOnPage,
+      page_title: document.title
     });
   });
 }
 
-// Eventos de video
-function trackVideoInteractions() {
-  const videos = document.querySelectorAll('video');
-  videos.forEach(video => {
-    video.addEventListener('play', function() {
-      if (window.gtag) {
-        gtag('event', 'video_play', {
-          video_title: document.title,
-          page_title: document.title
-        });
-      }
-    });
-  });
-}
+// Función para cambiar preferencias de cookies (disponible globalmente)
+window.cambiarPreferenciasCookies = function() {
+  // Eliminar decisión previa
+  localStorage.removeItem("cookies_decision");
+  localStorage.removeItem("cookies_timestamp");
+  
+  // Mostrar banner nuevamente
+  if (!document.getElementById("cookie-banner")) {
+    mostrarBannerCookies();
+  }
+};
+
+// Función para verificar estado de cookies (disponible globalmente)
+window.getCookieStatus = function() {
+  const decision = localStorage.getItem("cookies_decision");
+  const timestamp = localStorage.getItem("cookies_timestamp");
+  
+  if (!decision) return "no_decision";
+  
+  return {
+    decision: decision,
+    timestamp: timestamp ? new Date(parseInt(timestamp)) : null
+  };
+};

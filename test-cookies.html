@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Banner de Cookies</title>
+  <link rel="stylesheet" href="assets/css/cookie-banner.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .test-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .test-button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .test-button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-content">
+    <h1>Test del Banner de Cookies</h1>
+    <p>Esta página es para probar que el banner de cookies funcione correctamente.</p>
+    
+    <h2>Funcionalidades a probar:</h2>
+    <ul>
+      <li>El banner debe aparecer al cargar la página</li>
+      <li>El enlace a la política de cookies debe funcionar</li>
+      <li>Al aceptar, debe desaparecer y cargar analytics</li>
+      <li>Al rechazar, debe desaparecer sin cargar analytics</li>
+    </ul>
+    
+    <h2>Botones de prueba:</h2>
+    <button class="test-button" onclick="cambiarPreferenciasCookies()">Mostrar Banner Nuevamente</button>
+    <button class="test-button" onclick="verEstadoCookies()">Ver Estado de Cookies</button>
+    <button class="test-button" onclick="limpiarCookies()">Limpiar Cookies</button>
+    
+    <div id="cookie-status"></div>
+  </div>
+
+  <script src="assets/js/cookie-config.js"></script>
+  <script src="assets/js/analytics.js"></script>
+  <script>
+    // Función para mostrar el estado de las cookies
+    function verEstadoCookies() {
+      const status = getCookieStatus();
+      const statusDiv = document.getElementById('cookie-status');
+      
+      if (status === "no_decision") {
+        statusDiv.innerHTML = '<p><strong>Estado:</strong> No se ha tomado decisión</p>';
+      } else {
+        statusDiv.innerHTML = `
+          <p><strong>Estado:</strong> ${status.decision}</p>
+          <p><strong>Fecha:</strong> ${status.timestamp ? status.timestamp.toLocaleString() : 'N/A'}</p>
+        `;
+      }
+    }
+    
+    // Función para limpiar cookies
+    function limpiarCookies() {
+      localStorage.removeItem("cookies_decision");
+      localStorage.removeItem("cookies_timestamp");
+      document.getElementById('cookie-status').innerHTML = '<p>Cookies limpiadas</p>';
+      location.reload(); // Recargar para mostrar el banner
+    }
+  </script>
+</body>
+</html>

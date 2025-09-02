@@ -261,6 +261,19 @@
     text-align: center !important;
   }
 
+  /* 🔧 Centrar el banner en móvil */
+  .inicio-banner {
+    justify-content: center !important;
+    height: 8vh !important; /* 🔧 En móvil mantiene la misma altura reducida */
+    margin-top: 0 !important; /* 🔧 En móvil no necesita margen superior */
+  }
+
+  .container-inicio {
+    text-align: center !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
   /* 🔧 Asegurar que las secciones tengan suficiente espacio en móvil */
   .section-split,
   .section-inicial,
@@ -344,6 +357,7 @@
 
   .aznar-feature-card h3 {
     text-align: center !important;
+    text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -641,8 +655,8 @@
     font-family: 'MONTSERRAT', serif;
     font-weight: 500;
     color: #000;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   .split-text h2 {
@@ -660,9 +674,14 @@
     font-size: 0.95rem;
     font-weight: 400;
     color: #111;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     font-family: 'MONTSERRAT', serif;
     /*font-family: 'NOTO SANS', serif;*/
+  }
+  
+  /* Solo el último párrafo tiene margen inferior */
+  .split-text p:last-child {
+    margin-bottom: 1.5rem;
   }
 
   .split-image img {
@@ -881,17 +900,29 @@
 
 .aznar-feature-card h3 {
   font-size: 1.6rem;
-  margin: 1rem 0rem;   /* 🆕 Margen interno lateral */
+  margin: 0.5rem 0rem;   /* 🆕 Margen interno lateral reducido */
   color: #222;
   font-family: 'MONTSERRAT', serif;
   font-weight: 300;
   text-align: left;      /* 🆕 Alineado a la izquierda */
   width: 100%;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
+}
+
+/* Excepción para la página "Por qué Aznar" - títulos debajo de fotos en minúscula */
+.porque-aznar .aznar-feature-card h3 {
+  text-transform: none !important; /* Mantiene títulos en minúscula */
 }
   
   .aznar-feature-card p {
     font-size: 1rem;
     color: #111;
+    margin-bottom: 0;
+  }
+  
+  /* Solo el último párrafo tiene margen inferior */
+  .aznar-feature-card p:last-child {
+    margin-bottom: 1rem;
   }
   
   /* --- Ubicación Page --- */
@@ -923,13 +954,19 @@
   .contact-card h3 {
     font-size: 1.8rem;
     font-weight: 400;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #222;
+    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
   
   .contact-card p {
     font-size: 1.1rem;
     color: #111;
+    margin-bottom: 0;
+  }
+  
+  /* Solo el último párrafo tiene margen inferior */
+  .contact-card p:last-child {
     margin-bottom: 0.5rem;
   }
   
@@ -958,16 +995,16 @@
     .section h2,
     .inicio-banner h1,
     .titulo-banner {
-      font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important; /* 🔧 Tamaño más grande y responsivo */
-      line-height: 1.3 !important;
-      margin: 1.5rem auto 1rem auto !important; /* 🔧 Centrado perfecto con márgenes */
+      font-size: 1.2rem !important; /* 🔧 Mismo tamaño que h3 */
+      line-height: 1.4 !important;
+      margin: 0.8rem auto !important; /* 🔧 Mismo margen que h3 */
       padding: 0 0.3rem !important; /* 🔧 Padding mínimo para máximo espacio */
-      text-align: center !important; /* 🔧 Asegura centrado del texto */
+      text-align: center !important; /* 🔧 Asegura centrado del texto en móvil */
       width: 100% !important; /* 🔧 Ancho completo */
       box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
-      white-space: nowrap !important; /* 🔧 Fuerza una sola línea */
-      overflow: hidden !important; /* 🔧 Oculta texto que se desborde */
-      text-overflow: ellipsis !important; /* 🔧 Puntos suspensivos si se corta */
+      font-weight: 450 !important; /* 🔧 Mismo peso que h3 */
+      color: #000 !important; /* 🔧 Mismo color que h3 */
+      text-transform: uppercase !important; /* 🔧 Mantiene mayúsculas */
     }
 
     /* 🔧 Ajustar contenedores de texto para pantallas muy pequeñas */
@@ -996,6 +1033,7 @@
       line-height: 1.4 !important;
       margin-top: 0.8rem !important;
       margin-bottom: 0.8rem !important;
+      text-transform: uppercase !important; /* 🔧 Transforma todos los subtítulos a mayúsculas */
     }
 
     /* 🔧 Asegurar centrado en pantallas muy pequeñas */
@@ -1028,6 +1066,17 @@
 
     .aznar-feature-card h3 {
       text-align: center !important;
+      text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
+    }
+
+    /* Excepción para la página "Por qué Aznar" - títulos debajo de fotos en minúscula */
+    .porque-aznar .aznar-feature-card h3 {
+      text-transform: none !important; /* Mantiene títulos en minúscula */
+    }
+
+    /* Excepción para la página "Por qué Aznar" - títulos debajo de fotos en minúscula */
+    .porque-aznar .aznar-feature-card h3 {
+      text-transform: none !important; /* Mantiene títulos en minúscula */
     }
   }
   /* Mapa */
@@ -1363,15 +1412,21 @@
   font-family: 'MONTSERRAT', serif;
   font-weight: 300;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .producto-info p {
   font-size: 0.95rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.6;
+}
+
+/* Solo el último párrafo tiene margen inferior */
+.producto-info p:last-child {
+  margin-bottom: 1rem;
 }
 
 /* Galería de imágenes en fila */
@@ -1438,6 +1493,7 @@
   .producto-info h2 {
     margin-bottom: 0.4rem;
     margin-top: 0.4rem;
+    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 
   .producto-imagen{
@@ -1802,9 +1858,10 @@ nav {
 
 .triple-text h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .triple-text ul {
@@ -1816,8 +1873,13 @@ nav {
 .triple-text ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.5;
+}
+
+/* Solo el último elemento de la lista tiene margen inferior */
+.triple-text ul li:last-child {
+  margin-bottom: 1rem;
 }
 
 .icono-cert {
@@ -1857,13 +1919,20 @@ nav {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .square-text p {
   font-size: 1rem;
   color: #444;
   line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Solo el último párrafo tiene margen inferior */
+.square-text p:last-child {
+  margin-bottom: 1rem;
 }
 
 .square-img img {
@@ -1916,8 +1985,9 @@ nav {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: left;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .one-third-text ul {
@@ -1928,8 +1998,13 @@ nav {
 .one-third-text ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.5;
+}
+
+/* Solo el último elemento de la lista tiene margen inferior */
+.one-third-text ul li:last-child {
+  margin-bottom: 1rem;
 }
 
 .one-third-text .icono-cert {
@@ -1992,6 +2067,7 @@ nav {
 
   .one-third-text h2 {
     text-align: center;
+    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -2058,9 +2134,10 @@ nav {
 
 .triple-text h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .triple-text ul {
@@ -2072,8 +2149,13 @@ nav {
 .triple-text ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.5;
+}
+
+/* Solo el último elemento de la lista tiene margen inferior */
+.triple-text ul li:last-child {
+  margin-bottom: 1rem;
 }
 
 .icono-cert {
@@ -2144,13 +2226,20 @@ nav {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .square-text p {
   font-size: 1rem;
   color: #444;
   line-height: 1.4;
+  margin-bottom: 0;
+}
+
+/* Solo el último párrafo tiene margen inferior */
+.square-text p:last-child {
+  margin-bottom: 1rem;
 }
 
 .square-img img {
@@ -2180,6 +2269,7 @@ nav {
 .one-third-text h2,
 .producto-info h2 {
   font-weight: 500 !important; /* 💪 Subido de 300 a 500 */
+  text-transform: uppercase !important; /* Transforma títulos a mayúsculas */
 }
 .square-text p,
 .triple-text ul li,
@@ -2244,8 +2334,9 @@ nav {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', sans-serif;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: left;
+  text-transform: uppercase; /* Transforma títulos a mayúsculas */
 }
 
 .one-third-text ul {
@@ -2256,8 +2347,13 @@ nav {
 .one-third-text ul li {
   font-size: 1rem;
   color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   line-height: 1.5;
+}
+
+/* Solo el último elemento de la lista tiene margen inferior */
+.one-third-text ul li:last-child {
+  margin-bottom: 1rem;
 }
 
 .one-third-text .icono-cert {
@@ -2284,6 +2380,7 @@ nav {
 
   .one-third-text h2 {
     text-align: center;
+    text-transform: uppercase; /* Transforma títulos a mayúsculas */
   }
 }
 
@@ -2537,28 +2634,34 @@ nav {
 
 .inicio-banner {
   width: 100vw;
-  height: 15vh; /* 🎯 Ocupa el 40% restante de la pantalla */
+  height: 8vh; /* 🔧 Reducido significativamente para menos espacio */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #fff; /* Puedes cambiar el color de fondo */
+  padding: 0;
+  position: relative;
+  margin-top: 20px; /* 🔧 Espacio adicional para evitar colapso con el menú */
 }
 
 .container-inicio {
   width: 100%;
-  padding-left: 4.5rem;
-  padding-right: 2rem;
+  padding: 0.3rem 2rem 0.3rem 4.5rem; /* 🔧 Reducido aún más el padding vertical */
   box-sizing: border-box;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .titulo-banner {
-  font-family: 'MONTSERRAT', serif; /*font-family: 'MONTSERRAT', serif; font-family: 'NOTO SANS', serif;*/
-  font-weight: 300;
-  font-size: clamp(2rem, 5vw, 2rem);
-  letter-spacing: 0.03em; /* ✨ Más aire entre letras para elegancia */
-  color: #222;
+  font-family: 'MONTSERRAT', serif;
+  font-weight: 450;
+  font-size: 1.2rem;
+  color: #000;
   margin: 0;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .btn-pdf {

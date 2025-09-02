@@ -1,0 +1,27 @@
+{
+  "name": "Aznar Textil - Fabricantes de textiles desde 1881",
+  "short_name": "Aznar Textil",
+  "description": "Fabricantes de textiles de alta calidad para hogar, hostelería y colectividades",
+  "start_url": "/es/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c62828",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/7-marca-aznar-textil.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/7-marca-aznar-textil.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "shopping"],
+  "lang": "es",
+  "dir": "ltr"
+}

@@ -24,13 +24,33 @@ function mostrarBannerCookies() {
   const currentPath = window.location.pathname;
   let policyUrl;
   
-  // Detectar si estamos en GitHub Pages y generar la ruta correcta
+  // Calcular la ruta relativa correcta desde la página actual
   if (currentPath.includes('/webAznar/')) {
-    // Si estamos en GitHub Pages, usar ruta relativa desde la raíz del repositorio
-    policyUrl = 'es/legal/uso-cookies.html';
+    // Si estamos en GitHub Pages
+    if (currentPath.includes('/es/legal/')) {
+      // Si estamos en una página legal, ir a la misma carpeta
+      policyUrl = 'uso-cookies.html';
+    } else if (currentPath.includes('/es/producto/')) {
+      // Si estamos en productos, subir dos niveles
+      policyUrl = '../../legal/uso-cookies.html';
+    } else if (currentPath.includes('/es/')) {
+      // Si estamos en es/, subir un nivel
+      policyUrl = 'legal/uso-cookies.html';
+    } else {
+      // Si estamos en la raíz de GitHub Pages
+      policyUrl = 'es/legal/uso-cookies.html';
+    }
   } else {
     // Para desarrollo local o producción
-    policyUrl = 'es/legal/uso-cookies.html';
+    if (currentPath.includes('/es/legal/')) {
+      policyUrl = 'uso-cookies.html';
+    } else if (currentPath.includes('/es/producto/')) {
+      policyUrl = '../../legal/uso-cookies.html';
+    } else if (currentPath.includes('/es/')) {
+      policyUrl = 'legal/uso-cookies.html';
+    } else {
+      policyUrl = 'es/legal/uso-cookies.html';
+    }
   }
   
   banner.innerHTML = `

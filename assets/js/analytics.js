@@ -24,19 +24,14 @@ function mostrarBannerCookies() {
   const currentPath = window.location.pathname;
   let policyUrl;
   
-  if (currentPath.includes('/producto/')) {
-    // Desde páginas de productos (2 niveles arriba)
-    policyUrl = '../../legal/uso-cookies.html';
-  } else if (currentPath.includes('/quienes-somos/') || currentPath.includes('/por-que-aznar/') || 
-             currentPath.includes('/responsabilidad-corporativa/') || currentPath.includes('/contract/')) {
-    // Desde páginas de empresa (2 niveles arriba)
-    policyUrl = '../../legal/uso-cookies.html';
-  } else if (currentPath.includes('/legal/')) {
-    // Desde páginas legales (mismo nivel)
-    policyUrl = 'uso-cookies.html';
+  // La ruta correcta siempre debe incluir /es/legal/uso-cookies.html
+  // Usar ruta absoluta desde la raíz del sitio para evitar problemas de navegación
+  if (currentPath.includes('/webAznar/')) {
+    // Si estamos en GitHub Pages
+    policyUrl = '/webAznar/es/legal/uso-cookies.html';
   } else {
-    // Desde la página principal y otras (1 nivel arriba)
-    policyUrl = '../legal/uso-cookies.html';
+    // Para desarrollo local o producción
+    policyUrl = '/es/legal/uso-cookies.html';
   }
   
   banner.innerHTML = `

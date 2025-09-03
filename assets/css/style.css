@@ -1178,7 +1178,9 @@ nav {
   .square-text,
   .one-third-text {
     padding: 2rem 1rem;
-    text-align: center;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .one-third-text h2 {
@@ -1237,25 +1239,26 @@ nav {
 .triple-block .triple-text {
   flex: 1 1 33%;
   background-color: #f0f0f0;
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .triple-text h2 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   font-family: 'MONTSERRAT', serif;
   font-weight: 500;
+  text-align: left;
 }
 
 .triple-text ul {
   list-style: none;
   padding: 0;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .triple-text ul li {
@@ -1273,7 +1276,8 @@ nav {
 .icono-cert {
   width: 50px;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -1336,22 +1340,27 @@ nav {
 .square-text {
   background-color: #f0f0f0;
   flex-direction: column;
-  padding: 1.5rem;
-  text-align: center;
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .square-text h2 {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', serif;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .square-text p {
   font-size: 1rem;
   color: #444;
-  line-height: 1.4;
+  line-height: 1.6;
   margin-bottom: 0;
+  text-align: left;
 }
 
 /* Solo el último párrafo tiene margen inferior */
@@ -1436,10 +1445,10 @@ nav {
 .one-third-text {
   flex: 1 1 33.33%;
   background-color: #f0f0f0;
-  padding: 3rem 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: left;
 }
 
@@ -1447,13 +1456,14 @@ nav {
   font-size: 1.5rem;
   font-family: 'MONTSERRAT', serif;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   text-align: left;
 }
 
 .one-third-text ul {
   list-style: none;
   padding: 0;
+  margin-top: 0;
 }
 
 .one-third-text ul li {
@@ -1475,6 +1485,7 @@ nav {
     flex-direction: column;
     height: auto; /* 🔧 Altura automática para evitar colapso */
     min-height: 400px; /* 💡 Altura mínima para mantener proporción */
+    gap: 0; /* 🚫 Eliminar separación entre foto y texto en móvil */
   }
 
   .two-thirds-img,
@@ -1487,12 +1498,12 @@ nav {
 
   .one-third-text {
     padding: 2rem 1rem;
-    text-align: center;
+    text-align: left;
     overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }
 
   .one-third-text h2 {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -1569,7 +1580,17 @@ nav {
 .triple-block,
 .triple-square,
 .two-thirds-block {
-  margin: 2rem 0 !important; /* usa gap: 2rem */
+  margin: 1rem 0 !important; /* Separación uniforme: igual que el gap interno */
+}
+
+/* En móvil, separación uniforme entre bloques */
+@media (max-width: 768px) {
+  .triple-block,
+  .triple-square,
+  .two-thirds-block,
+  .contract-intro {
+    margin: 1rem 0 !important; /* Misma separación que el gap interno */
+  }
 }
 /* ==== FOOTER COMPLETO RESPONSIVO ==== */
 .footer {

@@ -96,7 +96,7 @@ p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.c
 #our-team{margin-bottom:0;padding-bottom:0;background-color:transparent}
 #our-team .split-text{padding-bottom:0;margin-bottom:0;background-color:transparent}
 
-@media (max-width:768px){#our-team{margin-bottom:0!important}.split-text{padding-bottom:0!important}.section-split h2,.split-text h2,.section-inicial h2,.seccion-dos-imagenes h2,.section h2,.inicio-banner h1,.titulo-banner{text-align:center!important;margin:0 auto!important;padding:0 0.5rem!important;max-width:100%!important;width:100%!important;box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:clamp(1.8rem,6vw,3rem)!important;display:block!important}.split-text{padding-top:2rem!important;padding-bottom:2rem!important;text-align:center!important}.inicio-banner{justify-content:center!important;height:8vh!important;margin-top:0!important}.container-inicio{text-align:center!important;padding-left:2rem!important;padding-right:2rem!important}.section-split,.section-inicial,.seccion-dos-imagenes,.section{padding-top:2rem!important;padding-bottom:2rem!important;margin-top:1rem!important;margin-bottom:1rem!important}.section-split h3,.split-text h3{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split p,.split-text p,.section p,.aznar-feature-card p,.contact-card p,.contact-info-vertical p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split a,.split-text a,.btn-explore-black,.btn-explore-black-product,.btn-submit,.btn-pdf,.btn-volver{display:block!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}.section-split ul,.split-text ul,.section ul,.triple-text ul,.square-text ul,.one-third-text ul{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split li,.split-text li,.section li,.triple-text li,.square-text li,.one-third-text li{text-align:center!important}.contact-info-vertical{text-align:center!important}.contact-info-vertical h2{text-align:center!important}.aznar-feature-card{text-align:center!important;align-items:center!important}.aznar-feature-card h3{text-align:center!important}}
+@media (max-width:768px){#our-team{margin-bottom:0!important}.split-text{padding-bottom:0!important}.section-split h2,.split-text h2,.section-inicial h2,.seccion-dos-imagenes h2,.section h2,.inicio-banner h1,.titulo-banner{text-align:center!important;margin:0 auto!important;padding:0 0.5rem!important;max-width:100%!important;width:100%!important;box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:clamp(1.8rem,6vw,3rem)!important;display:block!important}.split-text{padding-top:2rem!important;padding-bottom:2rem!important;text-align:center!important}.inicio-banner{justify-content:center!important;height:8vh!important;margin-top:0!important}.container-inicio{text-align:center!important;padding-left:2rem!important;padding-right:2rem!important}.section-split,.section-inicial,.seccion-dos-imagenes,.section{padding-top:2rem!important;padding-bottom:2rem!important;margin-top:1rem!important;margin-bottom:1rem!important}.section-split h3,.split-text h3{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split p,.split-text p,.section p,.aznar-feature-card p,.contact-card p,.contact-info-vertical p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split a,.split-text a,.btn-explore-black,.btn-explore-black-product,.btn-submit,.btn-pdf,.btn-volver{display:block!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}.section-split ul,.split-text ul,.section ul{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split li,.split-text li,.section li{text-align:center!important}.contact-info-vertical{text-align:center!important}.contact-info-vertical h2{text-align:center!important}.aznar-feature-card{text-align:center!important;align-items:center!important}.aznar-feature-card h3{text-align:center!important}}
 
 
 
@@ -1171,13 +1171,13 @@ nav {
     flex: 1 1 100%;
     width: 100%;
     height: auto;
-    min-height: 300px;
+    min-height: 350px;
   }
 
   .triple-text,
   .square-text,
   .one-third-text {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem 3rem 1.5rem;
     text-align: left;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1239,7 +1239,7 @@ nav {
 .triple-block .triple-text {
   flex: 1 1 33%;
   background-color: #f0f0f0;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 2rem 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1307,11 +1307,11 @@ nav {
     flex: 1 1 100%;
     width: 100%;
     height: auto; /* 🔧 Altura automática para adaptarse al contenido */
-    min-height: 300px; /* 💡 Altura mínima para el contenido */
+    min-height: 350px; /* 💡 Altura mínima aumentada para el contenido */
   }
 
   .triple-text {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem 3rem 1.5rem;
     overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }
 }
@@ -1340,7 +1340,7 @@ nav {
 .square-text {
   background-color: #f0f0f0;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem 2rem;
   text-align: left;
   display: flex;
   justify-content: flex-start;
@@ -1412,11 +1412,11 @@ nav {
   .square-img {
     aspect-ratio: auto;
     width: 100%;
-    min-height: 300px;
+    min-height: 350px;
   }
 
   .square-text {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem 3rem 1.5rem;
   }
 }
 
@@ -1445,7 +1445,7 @@ nav {
 .one-third-text {
   flex: 1 1 33.33%;
   background-color: #f0f0f0;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 2rem 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1493,11 +1493,11 @@ nav {
     flex: 1 1 100%;
     width: 100%;
     height: auto; /* 🔧 Altura automática para adaptarse al contenido */
-    min-height: 300px; /* 💡 Altura mínima para el contenido */
+    min-height: 350px; /* 💡 Altura mínima aumentada para el contenido */
   }
 
   .one-third-text {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem 3rem 1.5rem;
     text-align: left;
     overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }

@@ -1794,6 +1794,30 @@ nav {
 /* ==== Footer General ==== */
 
 /* === CONTRACT: Triple Block === */
+.contract-text-box {
+  background-color: #f0f0f0;
+}
+
+.contract-text-padding {
+  padding: 3rem 2rem;
+}
+
+.contract-text-color {
+  color: #444;
+}
+
+.contract-text-line-height {
+  line-height: 1.5;
+}
+
+.no-list-style {
+  list-style: none;
+}
+
+.smooth-transition {
+  transition: all 0.3s ease;
+}
+
 .triple-block {
   display: flex;
   align-items: stretch;
@@ -1947,32 +1971,28 @@ nav {
   display: block;
 }
 
-.triple-square .icono-cert {
-  width: 50px;
-  height: auto;
-  margin-bottom: 1rem;
-}
+
 
 .triple-text,
 .square-text,
 .one-third-text,
 .producto-info {
-  align-items: flex-start !important; /* Alineación izquierda de elementos internos */
-  text-align: left !important;       /* Alineación del texto */
-  padding-left: 2rem !important;     /* Empuja todo visualmente a la izquierda */
-  padding-right: 2rem !important;    /* Mantiene simetría */
+  align-items: flex-start; /* Alineación izquierda de elementos internos */
+  text-align: left;       /* Alineación del texto */
+  padding-left: 2rem;     /* Empuja todo visualmente a la izquierda */
+  padding-right: 2rem;    /* Mantiene simetría */
 }
 .square-text h2,
 .triple-text h2,
 .one-third-text h2,
 .producto-info h2 {
-  font-weight: 500 !important; /* 💪 Mismo peso que el título LISOS */
+  font-weight: 500; /* 💪 Mismo peso que el título LISOS */
 }
 .square-text p,
 .triple-text ul li,
 .one-third-text ul li,
 .producto-info p {
-  font-weight: 400 !important; /* 📈 Subido de 300 a 400 */
+  font-weight: 400; /* 📈 Subido de 300 a 400 */
 }
 
 @media (max-width: 768px) {
@@ -2053,11 +2073,7 @@ nav {
   margin-bottom: 1rem;
 }
 
-.one-third-text .icono-cert {
-  width: 50px;
-  height: auto;
-  margin-bottom: 1rem;
-}
+
 
 @media (max-width: 768px) {
   .two-thirds-block {
@@ -2155,9 +2171,11 @@ nav {
     height: 100%;
   }
 }
-.triple-block { margin: 2rem 0 !important; }        /* usa gap: 2rem */
-.triple-square { margin: 2rem 0 !important; }        /* usa gap: 2rem */
-.two-thirds-block { margin: 2rem 0 !important; }     /* usa gap: 2rem */
+.triple-block,
+.triple-square,
+.two-thirds-block {
+  margin: 2rem 0 !important; /* usa gap: 2rem */
+}
 /* ==== FOOTER COMPLETO RESPONSIVO ==== */
 .footer {
   background-color: #f8f8f8;

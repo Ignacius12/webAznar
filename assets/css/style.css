@@ -1871,6 +1871,8 @@ nav {
 
   .triple-block {
     flex-direction: column;
+    height: auto; /* 🔧 Altura automática para evitar colapso */
+    min-height: 400px; /* 💡 Altura mínima para mantener proporción */
   }
 
   .triple-img:first-of-type {
@@ -1881,10 +1883,13 @@ nav {
   .triple-text {
     flex: 1 1 100%;
     width: 100%;
+    height: auto; /* 🔧 Altura automática para adaptarse al contenido */
+    min-height: 300px; /* 💡 Altura mínima para el contenido */
   }
 
   .triple-text {
     padding: 2rem 1rem;
+    overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }
 }
 
@@ -2057,17 +2062,22 @@ nav {
 @media (max-width: 768px) {
   .two-thirds-block {
     flex-direction: column;
+    height: auto; /* 🔧 Altura automática para evitar colapso */
+    min-height: 400px; /* 💡 Altura mínima para mantener proporción */
   }
 
   .two-thirds-img,
   .one-third-text {
     flex: 1 1 100%;
     width: 100%;
+    height: auto; /* 🔧 Altura automática para adaptarse al contenido */
+    min-height: 300px; /* 💡 Altura mínima para el contenido */
   }
 
   .one-third-text {
     padding: 2rem 1rem;
     text-align: center;
+    overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }
 
   .one-third-text h2 {
@@ -2119,8 +2129,8 @@ nav {
 @media (max-width: 768px) {
   .contract-intro {
     flex-direction: column;
-    min-height: 60vh;
-
+    min-height: auto; /* 🔧 Altura automática en móvil */
+    height: auto; /* 🔧 Altura automática */
   }
 
   .contract-intro .intro-image,
@@ -2134,10 +2144,11 @@ nav {
   .contract-intro .intro-text {
     padding: 1.5rem 1rem;
     margin-top: 0; /* Asegura que no haya margen superior adicional */
+    overflow: visible; /* 🔧 Permitir que el texto se vea completo */
   }
 
   .contract-intro .intro-image {
-    height: auto; /* se adapta si hay espacio suficiente */
+    height: 300px; /* 🔧 Altura fija pero manejable */
   }
 
   .contract-intro .intro-image img {

@@ -96,141 +96,7 @@ p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.c
 #our-team{margin-bottom:0;padding-bottom:0;background-color:transparent}
 #our-team .split-text{padding-bottom:0;margin-bottom:0;background-color:transparent}
 
-@media (max-width: 768px) {
-  #our-team {
-    margin-bottom: 0 !important;
-  }
-
-  .split-text {
-    padding-bottom: 0 !important;
-  }
-
-  /* 🔧 Centrar títulos de sección en móvil para evitar que se corten */
-  .section-split h2,
-  .split-text h2,
-  .section-inicial h2,
-  .seccion-dos-imagenes h2,
-  .section h2,
-  .inicio-banner h1,
-  .titulo-banner {
-    text-align: center !important;
-    margin: 0 auto !important; /* 🔧 Centrado perfecto */
-    padding: 0 0.5rem !important; /* 🔧 Padding reducido para más espacio */
-    max-width: 100% !important;
-    width: 100% !important; /* 🔧 Asegura ancho completo */
-    box-sizing: border-box !important; /* 🔧 Incluye padding en el ancho */
-    white-space: nowrap !important; /* 🔧 Fuerza una sola línea */
-    overflow: hidden !important; /* 🔧 Oculta texto que se desborde */
-    text-overflow: ellipsis !important; /* 🔧 Puntos suspensivos si se corta */
-    font-size: clamp(1.8rem, 6vw, 3rem) !important; /* 🔧 Tamaño más grande y responsivo */
-    display: block !important; /* 🔧 Asegura comportamiento de bloque */
-  }
-
-  /* 🔧 Asegurar que los contenedores de texto tengan suficiente espacio */
-  .split-text {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-    text-align: center !important;
-  }
-
-  /* 🔧 Centrar el banner en móvil */
-  .inicio-banner {
-    justify-content: center !important;
-    height: 8vh !important; /* 🔧 En móvil mantiene la misma altura reducida */
-    margin-top: 0 !important; /* 🔧 En móvil no necesita margen superior */
-  }
-
-  .container-inicio {
-    text-align: center !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-
-  /* 🔧 Asegurar que las secciones tengan suficiente espacio en móvil */
-  .section-split,
-  .section-inicial,
-  .seccion-dos-imagenes,
-  .section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* 🔧 Centrar también los subtítulos h3 en móvil */
-  .section-split h3,
-  .split-text h3 {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* 🔧 Centrar todos los textos y elementos en móvil */
-  .section-split p,
-  .split-text p,
-  .section p,
-  .aznar-feature-card p,
-  .contact-card p,
-  .contact-info-vertical p {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* 🔧 Centrar botones en móvil */
-  .section-split a,
-  .split-text a,
-  .btn-explore-black,
-  .btn-explore-black-product,
-  .btn-submit,
-  .btn-pdf,
-  .btn-volver {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-  }
-
-  /* 🔧 Centrar listas en móvil */
-  .section-split ul,
-  .split-text ul,
-  .section ul,
-  .triple-text ul,
-  .square-text ul,
-  .one-third-text ul {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .section-split li,
-  .split-text li,
-  .section li,
-  .triple-text li,
-  .square-text li,
-  .one-third-text li {
-    text-align: center !important;
-  }
-
-  /* 🔧 Centrar elementos de contacto en móvil */
-  .contact-info-vertical {
-    text-align: center !important;
-  }
-
-  .contact-info-vertical h2 {
-    text-align: center !important;
-  }
-
-  /* 🔧 Centrar tarjetas de características en móvil */
-  .aznar-feature-card {
-    text-align: center !important;
-    align-items: center !important;
-  }
-
-  .aznar-feature-card h3 {
-    text-align: center !important;
-  }
-}
+@media (max-width:768px){#our-team{margin-bottom:0!important}.split-text{padding-bottom:0!important}.section-split h2,.split-text h2,.section-inicial h2,.seccion-dos-imagenes h2,.section h2,.inicio-banner h1,.titulo-banner{text-align:center!important;margin:0 auto!important;padding:0 0.5rem!important;max-width:100%!important;width:100%!important;box-sizing:border-box!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;font-size:clamp(1.8rem,6vw,3rem)!important;display:block!important}.split-text{padding-top:2rem!important;padding-bottom:2rem!important;text-align:center!important}.inicio-banner{justify-content:center!important;height:8vh!important;margin-top:0!important}.container-inicio{text-align:center!important;padding-left:2rem!important;padding-right:2rem!important}.section-split,.section-inicial,.seccion-dos-imagenes,.section{padding-top:2rem!important;padding-bottom:2rem!important;margin-top:1rem!important;margin-bottom:1rem!important}.section-split h3,.split-text h3{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split p,.split-text p,.section p,.aznar-feature-card p,.contact-card p,.contact-info-vertical p{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split a,.split-text a,.btn-explore-black,.btn-explore-black-product,.btn-submit,.btn-pdf,.btn-volver{display:block!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}.section-split ul,.split-text ul,.section ul,.triple-text ul,.square-text ul,.one-third-text ul{text-align:center!important;margin-left:auto!important;margin-right:auto!important}.section-split li,.split-text li,.section li,.triple-text li,.square-text li,.one-third-text li{text-align:center!important}.contact-info-vertical{text-align:center!important}.contact-info-vertical h2{text-align:center!important}.aznar-feature-card{text-align:center!important;align-items:center!important}.aznar-feature-card h3{text-align:center!important}}
 
 
 
@@ -238,26 +104,9 @@ p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.c
 
 
   
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
+.background-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
   
-.hero-text {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  }
+.hero-text{position:relative;z-index:1;color:#fff;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
 
 .slogan-imagen {
   max-width: 800px;
@@ -268,109 +117,24 @@ p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.c
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
 }
 
-.since-hero {
-  position: absolute;
-  left: 50%;
-  bottom: 30%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 1rem;
-  padding: 0.3rem 1.5rem;
-  border: 1px solid #fff;
-  text-align: center;
-  white-space: nowrap;
-  z-index: 10;
-  display: inline-block;
-  box-sizing: border-box;
-  pointer-events: none;
-}
+.since-hero{position:absolute;left:50%;bottom:30%;transform:translateX(-50%);color:#fff;font-size:1rem;padding:0.3rem 1.5rem;border:1px solid #fff;text-align:center;white-space:nowrap;z-index:10;display:inline-block;box-sizing:border-box;pointer-events:none}
   
-.hero-text h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
+.hero-text h2{font-size:1.5rem;font-weight:500}
   
-  /* Flecha scroll down */
-  .scroll-down {
-  margin-top: 8rem; /* Espacio entre texto y flecha */
-  }
-
-  .scroll-down span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-bottom: 4px solid #fff;
-    border-right: 4px solid #fff;
-    transform: rotate(45deg);
-    animation: bounce 2s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0) rotate(45deg);
-    }
-    40% {
-      transform: translateY(10px) rotate(45deg);
-    }
-    60% {
-      transform: translateY(5px) rotate(45deg);
-    }
-  }
+/* Flecha scroll down */
+.scroll-down{margin-top:8rem}
+.scroll-down span{display:block;width:20px;height:20px;border-bottom:4px solid #fff;border-right:4px solid #fff;transform:rotate(45deg);animation:bounce 2s infinite}
+@keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0) rotate(45deg)}40%{transform:translateY(10px) rotate(45deg)}60%{transform:translateY(5px) rotate(45deg)}}
   
-.company-banner {
-  background-color: #f9f9f9;
-  padding: 3rem 1rem;
-  text-align: center;
-  position: relative;
-}
-
-.company-slogan {
-  font-size: 1.5rem;
-  font-weight: 300;
-  max-width: 1000px;
-  padding: 2rem 2rem;
-  margin: 0 auto;
-  color: #222;
-}
+.company-banner{background-color:#f9f9f9;padding:3rem 1rem;text-align:center;position:relative}
+.company-slogan{font-size:1.5rem;font-weight:300;max-width:1000px;padding:2rem 2rem;margin:0 auto;color:#222}
 
 /* Secciones tipo split */
-.section-split {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  overflow: hidden;
-}
+.section-split{width:100vw;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);display:flex;flex-wrap:wrap;align-items:stretch;overflow:hidden}
+.section-split,.seccion-dos-imagenes{background-color:#F2F2F2;display:flex;height:500px;align-items:center;margin:0;padding:0}
 
-.section-split,
-.seccion-dos-imagenes {
-  background-color: #F2F2F2;
-  display: flex;
-  height: 500px;
-  align-items: center;
-  margin: 0;
-  padding: 0;    
-}
-
-.section-split .split-image,
-.section-split .split-text,
-.seccion-dos-imagenes .imagen {
-  width: 50vw;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.section-split .split-image img,
-.seccion-dos-imagenes .imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.section-split .split-image,.section-split .split-text,.seccion-dos-imagenes .imagen{width:50vw;height:100%;margin:0;padding:0;box-sizing:border-box}
+.section-split .split-image img,.seccion-dos-imagenes .imagen img{width:100%;height:100%;object-fit:cover;display:block}
 
 .seccion-dos-imagenes .imagen {
   width: 50vw;

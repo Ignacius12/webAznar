@@ -1705,41 +1705,7 @@ nav {
 
 
 
-/*---------------------------------------------------*/
-/* ==== Contract Intro ==== */
-.contract-intro {
-  display: flex;
-  flex-direction: row; /* ← Fuerza la disposición horizontal */
-  flex-wrap: nowrap;
-  align-items: stretch;
-  min-height: 60vh;
-  gap: 2rem;
-}
 
-
-.contract-intro .intro-image,
-.contract-intro .intro-text {
-  flex: 1 1 50%;
-}
-
-.contract-intro .intro-image {
-  height: 100%; /* 🔥 fuerza a ocupar todo el espacio vertical */
-}
-
-.contract-intro .intro-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.contract-intro .intro-text {
-  padding: 4rem;
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 /* === CONTRACT: Logos === */
 .contract-logos {
@@ -1761,121 +1727,12 @@ nav {
   height: auto;
 }
 
-/* === CONTRACT: Triple Block (horizontal alargado) === */
-.triple-block {
-  display: flex;
-  align-items: stretch;
-  width: 100%;
-  height: 75vh; /* 🔧 Mantener altura proporcional */
-  margin: 2rem 0 !important;
-  padding: 0 2rem;
-  gap: 2rem;
-}
-
-.triple-block .triple-img {
-  flex: 1 1 33%;
-  height: 100%;
-}
-
-.triple-block .triple-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.triple-block .triple-text {
-  flex: 1 1 33%;
-  background-color: #f0f0f0;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 
-/* === CONTRACT: Cuadrados alineados === */
-.triple-square {
-  display: flex;
-  width: 100%;
-  gap: 2rem;
-  margin: 2rem 0;
-  padding: 0 2rem;
-  min-height: 500px; /* 🔧 Restaurar altura mínima */
-}
 
-.square-text,
-.square-img {
-  flex: 1 1 33%;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
 
-.square-text {
-  background-color: #f0f0f0;
-  flex-direction: column;
-  padding: 3rem 1.5rem;
-  text-align: left;        /* 👈 cambiado de center a left */
-  align-items: flex-start; /* 👈 añadido */
-}
 
-.triple-square .icono-cert {
-  width: 40px;
-  height: auto;
-  margin-bottom: 1rem;
-}
 
-/* === CONTRACT: 2/3 - 1/3 Bloque (Antibacterial) === */
-.two-thirds-block {
-  display: flex;
-  width: 100%;
-  margin: 5rem 0;
-  height: 500px; /* 🔧 Mantener altura fija */
-  align-items: stretch;
-  gap: 1rem;
-}
-
-.two-thirds-img {
-  flex: 2 1 66.66%;
-  height: 100%;
-}
-
-.two-thirds-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.one-third-text {
-  flex: 1 1 33.33%;
-  background-color: #f0f0f0;
-  padding: 3rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  overflow-y: auto;
-}
-
-.one-third-text h2 {
-  font-size: 1.5rem;
-  font-family: 'MONTSERRAT', serif;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.one-third-text .icono-cert {
-  width: 40px;
-  height: auto;
-  margin-bottom: 1rem;
-}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -1935,34 +1792,6 @@ nav {
 }
 
 /* ==== Footer General ==== */
-/* ==== Contract Intro ==== */
-.contract-intro {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  min-height: 60vh;
-}
-
-.contract-intro .intro-image,
-.contract-intro .intro-text {
-  flex: 1 1 50%;
-  min-height: 500px;
-}
-
-.contract-intro .intro-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.contract-intro .intro-text {
-  padding: 4rem;
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 /* === CONTRACT: Triple Block === */
 .triple-block {
@@ -1972,6 +1801,7 @@ nav {
   margin: 5rem 0;
   height: 75vh; /* 🔧 Restaurar altura proporcional */
   gap: 1rem;
+  padding: 0 2rem;
 }
 
 .triple-block .triple-img {
@@ -2067,6 +1897,7 @@ nav {
   padding: 0 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 500px; /* 🔧 Restaurar altura mínima */
 }
 
 .square-text,
@@ -2168,6 +1999,7 @@ nav {
   margin: 5rem 0;
   align-items: stretch;
   gap: 1rem;
+  height: 500px; /* 🔧 Mantener altura fija */
 }
 
 .two-thirds-img {
@@ -2249,6 +2081,8 @@ nav {
   flex-wrap: nowrap;
   align-items: stretch;
   width: 100%;
+  min-height: 60vh;
+  gap: 2rem;
 }
 
 .contract-intro .intro-image,

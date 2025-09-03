@@ -1766,7 +1766,7 @@ nav {
   display: flex;
   align-items: stretch;
   width: 100%;
-  height: 75vh;
+  height: 75vh; /* 🔧 Mantener altura proporcional */
   margin: 2rem 0 !important;
   padding: 0 2rem;
   gap: 2rem;
@@ -1796,37 +1796,6 @@ nav {
 }
 
 
-.triple-text h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-family: 'MONTSERRAT', serif;
-  font-weight: 500;
-}
-
-.triple-text ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
-
-.triple-text ul li {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-/* Solo el último elemento de la lista tiene margen inferior */
-.triple-text ul li:last-child {
-  margin-bottom: 1rem;
-}
-
-.icono-cert {
-  width: 50px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
 /* === CONTRACT: Cuadrados alineados === */
 .triple-square {
   display: flex;
@@ -1834,6 +1803,7 @@ nav {
   gap: 2rem;
   margin: 2rem 0;
   padding: 0 2rem;
+  min-height: 500px; /* 🔧 Restaurar altura mínima */
 }
 
 .square-text,
@@ -1854,32 +1824,6 @@ nav {
   align-items: flex-start; /* 👈 añadido */
 }
 
-.square-text h2 {
-  font-size: 1.5rem;
-  font-family: 'MONTSERRAT', serif;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.square-text p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.4;
-  margin-bottom: 0;
-}
-
-/* Solo el último párrafo tiene margen inferior */
-.square-text p:last-child {
-  margin-bottom: 1rem;
-}
-
-.square-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .triple-square .icono-cert {
   width: 40px;
   height: auto;
@@ -1891,7 +1835,7 @@ nav {
   display: flex;
   width: 100%;
   margin: 5rem 0;
-  height: 500px;
+  height: 500px; /* 🔧 Mantener altura fija */
   align-items: stretch;
   gap: 1rem;
 }
@@ -1925,23 +1869,6 @@ nav {
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: left;
-}
-
-.one-third-text ul {
-  list-style: none;
-  padding: 0;
-}
-
-.one-third-text ul li {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0;
-  line-height: 1.5;
-}
-
-/* Solo el último elemento de la lista tiene margen inferior */
-.one-third-text ul li:last-child {
-  margin-bottom: 1rem;
 }
 
 .one-third-text .icono-cert {
@@ -2043,6 +1970,7 @@ nav {
   align-items: stretch;
   width: 100%;
   margin: 5rem 0;
+  height: 75vh; /* 🔧 Restaurar altura proporcional */
   gap: 1rem;
 }
 

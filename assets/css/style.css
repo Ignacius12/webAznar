@@ -136,253 +136,45 @@ p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.c
 .section-split .split-image,.section-split .split-text,.seccion-dos-imagenes .imagen{width:50vw;height:100%;margin:0;padding:0;box-sizing:border-box}
 .section-split .split-image img,.seccion-dos-imagenes .imagen img{width:100%;height:100%;object-fit:cover;display:block}
 
-.seccion-dos-imagenes .imagen {
-  width: 50vw;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+.seccion-dos-imagenes .imagen{width:50vw;height:100%;margin:0;padding:0;box-sizing:border-box}
 
 /* Versión con imagen a la izquierda */
-.section-split.reverse {
-  flex-direction: row-reverse;
-}
-
-.section-split .split-text {
-  width: 50vw;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 5rem 6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-}
+.section-split.reverse{flex-direction:row-reverse}
+.section-split .split-text{width:50vw;height:100%;box-sizing:border-box;padding:5rem 6rem;display:flex;flex-direction:column;justify-content:center;margin:0}
 
 /* Responsive */
-@media (max-width: 1200px) {
-  .section-split,
-  .section-split.reverse,
-  .seccion-dos-imagenes {
-    flex-direction: column !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: unset !important;
-  }
-
-  .section-split .split-image,
-  .section-split .split-text,
-  .seccion-dos-imagenes .imagen {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .section-split .split-text {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 2rem 1rem !important;
-    box-sizing: border-box;
-    text-align: left;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  .section-split h2,
-  .section-split p {
-    text-align: left;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    max-width: 100%;
-  }
-
-  /* 🔧 Anular padding global solo en móvil */
-  p,
-  .split-text,
-  .section .text,
-  .hero-text p,
-  .footer-contact p,
-  .form-group label,
-  .contact-card p,
-  .aznar-feature-card p {
-    padding-right: 1rem !important; /* ✅ Se anula el padding de escritorio */
-  }
-
-  /* 🖼️ Imágenes fluidas */
-  .section-split img,
-  .seccion-dos-imagenes img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* 🔘 Botones adaptados sin estirarse */
-  .section-split a,
-  .split-text a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
+@media (max-width:1200px){.section-split,.section-split.reverse,.seccion-dos-imagenes{flex-direction:column!important;margin:0!important;padding:0!important;width:100%!important;height:auto!important;min-height:unset!important}.section-split .split-image,.section-split .split-text,.seccion-dos-imagenes .imagen{width:100%!important;max-width:100%!important;height:auto!important}.section-split .split-text{width:100%!important;max-width:100%!important;padding:2rem 1rem!important;box-sizing:border-box;text-align:left;overflow-wrap:anywhere;word-break:break-word}.section-split h2,.section-split p{text-align:left;overflow-wrap:anywhere;word-break:break-word;max-width:100%}p,.split-text,.section .text,.hero-text p,.footer-contact p,.form-group label,.contact-card p,.aznar-feature-card p{padding-right:1rem!important}.section-split img,.seccion-dos-imagenes img{width:100%!important;height:auto!important;object-fit:cover;display:block}.section-split a,.split-text a{display:inline-block;margin-top:1rem;padding:0.75rem 1.5rem;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 
 
 
-  .split-text h2, .split-text h3 {
-    font-family: 'MONTSERRAT', serif;
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
+.split-text h2,.split-text h3{font-family:'MONTSERRAT',serif;font-weight:500;color:#000;margin-bottom:0.5rem;margin-top:0.5rem}
+.split-text h2{font-size:1.5rem;font-weight:500}
+.split-text h3{font-size:1.2rem;font-weight:450;margin-bottom:0.5rem}
+.split-text p{font-size:0.95rem;font-weight:400;color:#111;margin-bottom:0;font-family:'MONTSERRAT',serif}
+.split-text p:last-child{margin-bottom:1.5rem}
+.split-image img{width:100%;height:500px;object-fit:cover;display:block}
 
-  .split-text h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  .split-text h3 {
-    font-size: 1.2rem;
-    font-weight: 450;
-    margin-bottom: 0.5rem;
-  }
-
-  .split-text p {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: #111;
-    margin-bottom: 0;
-    font-family: 'MONTSERRAT', serif;
-    /*font-family: 'NOTO SANS', serif;*/
-  }
-  
-  /* Solo el último párrafo tiene margen inferior */
-  .split-text p:last-child {
-    margin-bottom: 1.5rem;
-  }
-
-  .split-image img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-  }
-
-.productos-section .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  height: 15vh;
-}
-
+.productos-section .container{display:flex;align-items:center;justify-content:center;min-height:200px;height:15vh}
 /* Responsive */
-@media (max-width: 1024px) {
-  .section-split, .section-split.reverse {
-    flex-direction: column;
-  }
-
-  .split-text, .split-image {
-    max-width: 100%;
-    padding: 2rem;
-  }
-
-  .split-image img {
-    height: auto;
-    max-height: 500px;
-    max-width: 100%;
-  }
-}
-
+@media (max-width:1024px){.section-split,.section-split.reverse{flex-direction:column}.split-text,.split-image{max-width:100%;padding:2rem}.split-image img{height:auto;max-height:500px;max-width:100%}}
 /* Fotos de fondo */
-.productos-section {
-  background-image: url('../images/linosVarios.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 10rem 10rem;
-}
+.productos-section{background-image:url('../images/linosVarios.webp');background-size:cover;background-position:center;background-repeat:no-repeat;padding:10rem 10rem}
 
-  .seccion-dos-imagenes {
-  display: flex;
-  height: 500px;
-  width: 100vw;       /* 👈 Igual que .section-split */
-  margin: 0;
-  padding: 0;
-}
-.seccion-dos-imagenes .mitad {
-  flex: 1 1 50%;
-  max-width: 50%;
-  height: 100%;
-}
-
-.seccion-dos-imagenes img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.seccion-dos-imagenes{display:flex;height:500px;width:100vw;margin:0;padding:0}
+.seccion-dos-imagenes .mitad{flex:1 1 50%;max-width:50%;height:100%}
+.seccion-dos-imagenes img{width:100%;height:100%;object-fit:cover;display:block}
 
 
 
-.seccion-dos-imagenes-portada {
-  display: flex;
-  height: 75vh;
-  width: 100vw; /* 🌐 Ocupar todo el ancho de la pantalla */
-  margin-bottom: 0; /* 🔧 Eliminado el espacio entre fotos e información */
-  padding: 0;
-  background-color: #ffff;
-}
-
-.seccion-dos-imagenes-portada .mitad {
-  height: 100%;
-}
-
-.seccion-dos-imagenes-portada .izquierda {
-  flex: 2; /* 🎯 2/3 del ancho total */
-  max-width: 67%;
-}
-
-.seccion-dos-imagenes-portada .derecha {
-  flex: 1; /* 🎯 1/3 del ancho total */
-  max-width: 33%;
-}
-.seccion-dos-imagenes-portada .derecha img {
-  object-fit: contain !important;
-  background-color: white; /* Opcional, para evitar zonas vacías transparentes */
-}
-.seccion-dos-imagenes-portada img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 🧵 Ajuste elegante de la imagen */
-  display: block;
-}
+.seccion-dos-imagenes-portada{display:flex;height:75vh;width:100vw;margin-bottom:0;padding:0;background-color:#ffff}
+.seccion-dos-imagenes-portada .mitad{height:100%}
+.seccion-dos-imagenes-portada .izquierda{flex:2;max-width:67%}
+.seccion-dos-imagenes-portada .derecha{flex:1;max-width:33%}
+.seccion-dos-imagenes-portada .derecha img{object-fit:contain!important;background-color:white}
+.seccion-dos-imagenes-portada img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* 🌟 VERSIÓN RESPONSIVE 🌟 */
-@media (max-width: 1200px) {
-  .seccion-dos-imagenes-portada {
-    flex-direction: column; /* ⬇️ Se apilan en vertical */
-    height: auto;
-  }
-
-  .seccion-dos-imagenes-portada .izquierda,
-  .seccion-dos-imagenes-portada .derecha {
-    max-width: 100%; /* 📱 Ocupan todo el ancho */
-    flex: unset;
-    height: auto;
-  }
-
-  .seccion-dos-imagenes-portada img {
-    height: auto; /* 🖼️ Ajusta la altura automáticamente */
-  }
-}
+@media (max-width:1200px){.seccion-dos-imagenes-portada{flex-direction:column;height:auto}.seccion-dos-imagenes-portada .izquierda,.seccion-dos-imagenes-portada .derecha{max-width:100%;flex:unset;height:auto}.seccion-dos-imagenes-portada img{height:auto}}
 
 /* Botón Explore */
 .btn-explore-black {
